@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta http-equiv="Content-Type" content="text/html;  charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head><body style="overflow-x: hidden;" class="body"><sec:csrfmetatags>
+    
+
+
+ <!-- Favicons -->
+<link href="./assets/img/favicon.png" rel="icon">
+<link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="./assets/vendor/quill/quill.snow.css" rel="stylesheet">
+<link href="./assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+<link href="./assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="./assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="./assets/css/style.css" rel="stylesheet">
+
+<!-- =======================================================
+* Template Name: NiceAdmin - v2.2.2
+* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+======================================================== -->
+
+<!-- Vendor JS Files -->
+<script src="./assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/vendor/chart.js/chart.min.js"></script>
+<script src="./assets/vendor/echarts/echarts.min.js"></script>
+<script src="./assets/vendor/quill/quill.min.js"></script>
+<script src="./assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="./assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="./assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="./assets/js/main.js"></script>
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <title>Rehab</title>
+
+
+<!-- ======================
+header
+======================= -->
+
+
+
+
+<script>	
+$(document).on("click", ".toggle-sidebar-btn", function(){
+    if($(".body").hasClass("toggle-sidebar")){
+        $(".body").removeClass("toggle-sidebar");
+    }else{
+        $(".body").addClass("toggle-sidebar");
+    }
+    
+});
+</script>
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+<div class="d-flex align-items-center justify-content-between">
+  <a href="mainPage.do" class="logo d-flex align-items-center">
+    <img src="./assets/img/logo.png" alt="">
+    <span class="d-none d-lg-block">Rehab Platform</span>
+  </a>
+  <i class="bi bi-list toggle-sidebar-btn"></i>
+</div><!-- End Logo -->
+
+<div class="search-bar">
+  <form class="search-form d-flex align-items-center" method="POST" action="#">
+    <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+  </form>
+</div><!-- End Search Bar -->
+
+<nav class="header-nav ms-auto">
+  <ul class="d-flex align-items-center">
+
+    <li class="nav-item d-block d-lg-none">
+      <a class="nav-link nav-icon search-bar-toggle collapsed" href="#">
+        <i class="bi bi-search"></i>
+      </a>
+    </li><!-- End Search Icon-->
+
+    <li class="nav-item dropdown">
+
+      <a class="nav-link nav-icon collapsed" href="#" data-bs-toggle="dropdown">
+        <i class="bi bi-bell"></i>
+        <span class="badge bg-primary badge-number">4</span>
+      </a><!-- End Notification Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+        <li class="dropdown-header">
+          You have 4 new notifications
+          <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="notification-item">
+          <i class="bi bi-exclamation-circle text-warning"></i>
+          <div>
+            <h4>Lorem Ipsum</h4>
+            <p>Quae dolorem earum veritatis oditseno</p>
+            <p>30 min. ago</p>
+          </div>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="notification-item">
+          <i class="bi bi-x-circle text-danger"></i>
+          <div>
+            <h4>Atque rerum nesciunt</h4>
+            <p>Quae dolorem earum veritatis oditseno</p>
+            <p>1 hr. ago</p>
+          </div>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="notification-item">
+          <i class="bi bi-check-circle text-success"></i>
+          <div>
+            <h4>Sit rerum fuga</h4>
+            <p>Quae dolorem earum veritatis oditseno</p>
+            <p>2 hrs. ago</p>
+          </div>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="notification-item">
+          <i class="bi bi-info-circle text-primary"></i>
+          <div>
+            <h4>Dicta reprehenderit</h4>
+            <p>Quae dolorem earum veritatis oditseno</p>
+            <p>4 hrs. ago</p>
+          </div>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li class="dropdown-footer">
+          <a href="#">Show all notifications</a>
+        </li>
+
+      </ul><!-- End Notification Dropdown Items -->
+
+    </li><!-- End Notification Nav -->
+
+    <li class="nav-item dropdown">
+
+      <a class="nav-link nav-icon collapsed" href="#" data-bs-toggle="dropdown">
+        <i class="bi bi-chat-left-text"></i>
+        <span class="badge bg-success badge-number">3</span>
+      </a><!-- End Messages Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+        <li class="dropdown-header">
+          You have 3 new messages
+          <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="message-item">
+          <a href="#">
+            <img src="./assets/img/messages-1.jpg" alt="" class="rounded-circle">
+            <div>
+              <h4>Maria Hudson</h4>
+              <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+              <p>4 hrs. ago</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="message-item">
+          <a href="#">
+            <img src="./assets/img/messages-2.jpg" alt="" class="rounded-circle">
+            <div>
+              <h4>Anna Nelson</h4>
+              <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+              <p>6 hrs. ago</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="message-item">
+          <a href="#">
+            <img src="./assets/img/messages-3.jpg" alt="" class="rounded-circle">
+            <div>
+              <h4>David Muldon</h4>
+              <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+              <p>8 hrs. ago</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="dropdown-footer">
+          <a href="#">Show all messages</a>
+        </li>
+
+      </ul><!-- End Messages Dropdown Items -->
+
+    </li><!-- End Messages Nav -->
+
+    <li class="nav-item dropdown pe-3">
+
+      <a class="nav-link nav-profile d-flex align-items-center pe-0 collapsed" href="#" data-bs-toggle="dropdown">
+        <img src="./assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+        <span class="d-none d-md-block dropdown-toggle ps-2">SangWon Kim</span>
+      </a><!-- End Profile Iamge Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <li class="dropdown-header">
+          <h6>SangWon Kim</h6>
+          <span>Web Programer</span>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-gear"></i>
+            <span>Account Settings</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+            <i class="bi bi-question-circle"></i>
+            <span>Need Help?</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <i class="bi bi-box-arrow-right"></i>
+            <span><button type="button" onclick="location.href='/cmm/join/login.do'" style="border:none; background-color: white;">Sign Out</button></span>
+          </a>
+        </li>
+
+      </ul><!-- End Profile Dropdown Items -->
+    </li><!-- End Profile Nav -->
+
+  </ul>
+</nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+
+<!-- ======================
+END header
+======================= -->
+
+<div id="layout" class="on"> 
+    <!-- side menu -->
+    <div id="sideMenu">
+        <div style="position: fixed;">
+            
+
+
+
+<!-- <script>
+function subMenu(){
+    
+    $(".nav-item >a").addClass("collapsed");
+    $(this).parent().parent().parent().find("a").removeClass("collapsed");
+    $(this).addClass("active");
+}
+
+
+</script> -->
+
+<aside id="sidebar" class="sidebar">
+
+<ul class="sidebar-nav" id="sidebar-nav">
+  <li class="nav-heading">Dash board</li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="mainPage.do">
+      <i class="bi bi-grid"></i>
+      <span>종합현황</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
+    
+  <li class="nav-heading">Analysis</li>
+      
+  <li class="nav-item">
+      <a class="nav-link dataSch active" href="dataSch.do">
+          <i class="bi bi-menu-button-wide"></i>
+          <span>데이터 검색</span>
+      </a>
+  </li>
+  
+  <li class="nav-item">
+      <a class="nav-link detailStatis collapsed" href="detailStatis.do">
+          <i class="bi bi-bar-chart"></i>
+          <span>상세 통계</span>
+      </a>
+  </li>
+  
+  <li class="nav-item">
+       <a class="nav-link userAnalysis collapsed" href="userAnalysis.do">
+      <!-- <a class="nav-link userAnalysis collapsed" href="#"> -->
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>사용자 통계</span>
+      </a>
+  </li>
+
+ <!--  <li class="nav-heading">Pages</li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="bi bi-person"></i>
+      <span>Profile</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="bi bi-question-circle"></i>
+      <span>F.A.Q</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="bi bi-envelope"></i>
+      <span>Contact</span>
+    </a>
+  </li> -->
+
+  <!-- <li class="nav-item">
+    <a class="nav-link collapsed" href="pages-register.html">
+      <i class="bi bi-card-list"></i>
+      <span>Register</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pages-login.html">
+      <i class="bi bi-box-arrow-in-right"></i>
+      <span>Login</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pages-error-404.html">
+      <i class="bi bi-dash-circle"></i>
+      <span>Error 404</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pages-blank.html">
+      <i class="bi bi-file-earmark"></i>
+      <span>Blank</span>
+    </a>
+  </li> -->
+
+</ul>
+
+</aside><!-- End Sidebar-->
+
+<!-- <div class="openCon"><button type="button" class="sideMenuOpen">O<br>P<br>E<br>N</button></div> -->
+
+
+        </div>
+    </div>
+    <!-- END  side menu -->
+
+    <div>
+        
+
+
+
+
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<!-- <title>Tables / Data - NiceAdmin Bootstrap Template</title> -->
+<meta content="" name="description">
+<meta content="" name="keywords">
+
+
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">	
+
+var sortType;
+var ascDesc;
+$(document).ready(function(){		
+    /* $(".nav-item >a").addClass("collapsed");
+    $(".dataSch").parent().parent().parent().find("a").removeClass("collapsed");
+    $(".dataSch").parent().parent().addClass("show");
+    $(".dataSch").addClass("active"); */		
+    $(".nav-item >a").addClass("collapsed");
+    $(".dataSch").removeClass("collapsed");
+    $(".dataSch").addClass("active");
+});
+
+function menuActive(){
+    /* $(".nav-item >a").addClass("collapsed");
+    $(".dataSch").parent().parent().parent().find("a").removeClass("collapsed");
+    $(".dataSch").parent().parent().addClass("show");
+    $(".dataSch").addClass("active"); */
+    $(".nav-item >a").addClass("collapsed");
+    $(".dataSch").removeClass("collapsed");
+    $(".dataSch").addClass("active");
+}
+    
+/* $(document).on("change", ".getDies", function(){
+    var getDies = $(".getDies").val();
+    alert(getDies);
+}); */
+
+function reset(){
+    $(".diesKnd").val("");
+    $(".mnSym").val("");
+    $(".gender").val("");
+    $(".age").val("");
+    $(".ageRange").val(0);
+    $(".tall").val("");
+    $(".tallRange").val(0);
+    $(".weight").val("");
+    $(".weightRange").val(0);
+    $(".bmi").val("");
+    $(".bmiRange").val(0);
+    $(".hand").val("");
+    $(".job").val("");
+    sortType = "";
+    ascDesc = "";
+}
+
+function getSch(){
+    var diesKnd = $(".diesKnd").val();
+    var mnSym = $(".mnSym").val();
+    
+    /* if(diesKnd == "" || mnSym == ""){
+        alert("질병 종류, 주 증상은 필수 선택 사항입니다.");
+        return;
+    }; */
+    if(diesKnd == ""){
+        alert("질병 종류, 주 증상은 필수 선택 사항입니다.");
+        return;
+    };
+            
+    var data = {
+        "diesKnd": $(".diesKnd").val(),
+        "mnSym" : $(".mnSym").val(),
+        "gender" : $(".gender").val(),
+        "age" : $(".age").val(),
+        "ageRange" : $(".ageRange").val(),
+        "tall" : $(".tall").val(),
+        "tallRagne" : $(".tallRange").val(),
+        "weight" : $(".weight").val(),
+        "weightRange" : $(".weightRange").val(),
+        "bmi" : $(".bmi").val(),
+        "bmiRange" : $(".bmiRange").val(),
+        "hand" : $(".hand").val(),
+        "job" : $(".job").val(),
+        "type" : sortType,
+        "ascDesc" : ascDesc
+    };
+    
+    $.ajax({
+        url : "/cmm/rehab/getSearchData.do",
+        type : "POST",
+        data: data,
+        dataType : "html",
+        success : function(result) {
+            $('.schRst').html(result);
+            sortType = "";
+            ascDesc = "";
+            menuActive();
+        }, error : function(request, status, error){
+            alert("code:"+request.status+"\n"+"error:"+error);
+        }
+    });
+    
+};
+
+/* $(document).on("click", ".genderSort", function(){
+    if($(".genderSort").hasClass("bi-caret-down-fill")){
+        $(".genderSort").removeClass("bi-caret-down-fill");
+        $(".genderSort").addClass("bi-caret-up-fill");
+    }else if($(".genderSort").hasClass("bi-caret-up-fill")){
+        $(".genderSort").removeClass("bi-caret-up-fill");
+        $(".genderSort").addClass("bi-caret-down-fill");
+    }		
+});
+
+$(document).on("click", ".ageSort", function(){
+    if($(".ageSort").hasClass("bi-caret-down-fill")){
+        $(".ageSort").removeClass("bi-caret-down-fill");
+        $(".ageSort").addClass("bi-caret-up-fill");
+    }else if($(".ageSort").hasClass("bi-caret-up-fill")){
+        $(".ageSort").removeClass("bi-caret-up-fill");
+        $(".ageSort").addClass("bi-caret-down-fill");
+    }		
+});
+
+$(document).on("click", ".tallSort", function(){
+    if($(".tallSort").hasClass("bi-caret-down-fill")){
+        $(".tallSort").removeClass("bi-caret-down-fill");
+        $(".tallSort").addClass("bi-caret-up-fill");
+    }else if($(".tallSort").hasClass("bi-caret-up-fill")){
+        $(".tallSort").removeClass("bi-caret-up-fill");
+        $(".tallSort").addClass("bi-caret-down-fill");
+    }		
+});
+
+$(document).on("click", ".weightSort", function(){
+    if($(".weightSort").hasClass("bi-caret-down-fill")){
+        $(".weightSort").removeClass("bi-caret-down-fill");
+        $(".weightSort").addClass("bi-caret-up-fill");
+    }else if($(".weightSort").hasClass("bi-caret-up-fill")){
+        $(".weightSort").removeClass("bi-caret-up-fill");
+        $(".weightSort").addClass("bi-caret-down-fill");
+    }		
+});
+
+$(document).on("click", ".bmiSort", function(){
+    if($(".bmiSort").hasClass("bi-caret-down-fill")){
+        $(".bmiSort").removeClass("bi-caret-down-fill");
+        $(".bmiSort").addClass("bi-caret-up-fill");
+    }else if($(".bmiSort").hasClass("bi-caret-up-fill")){
+        $(".bmiSort").removeClass("bi-caret-up-fill");
+        $(".bmiSort").addClass("bi-caret-down-fill");
+    }		
+});
+
+$(document).on("click", ".handSort", function(){
+    if($(".handSort").hasClass("bi-caret-down-fill")){
+        $(".handSort").removeClass("bi-caret-down-fill");
+        $(".handSort").addClass("bi-caret-up-fill");
+    }else if($(".handSort").hasClass("bi-caret-up-fill")){
+        $(".handSort").removeClass("bi-caret-up-fill");
+        $(".handSort").addClass("bi-caret-down-fill");
+    }		
+});
+
+$(document).on("click", ".jobSort", function(){
+    if($(".jobSort").hasClass("bi-caret-down-fill")){
+        $(".jobSort").removeClass("bi-caret-down-fill");
+        $(".jobSort").addClass("bi-caret-up-fill");
+    }else if($(".jobSort").hasClass("bi-caret-up-fill")){
+        $(".jobSort").removeClass("bi-caret-up-fill");
+        $(".jobSort").addClass("bi-caret-down-fill");
+    }		
+}); */
+    
+
+$(document).on("click", ".dataDown", function(){	
+    
+    $form = $("<form id='dataDownExcel' action='/cmm/rehab/dataDownExcel.do'></form>");
+    $form.append('<input type="hidden" id="diesKnd" name="diesKnd" value="' + $(".diesKnd").val() + '">');
+    $form.append('<input type="hidden" id="mnSym" name="mnSym" value="' + $(".mnSym").val() + '">');
+    $form.append('<input type="hidden" id="gender" name="gender" value="' + $(".gender").val() + '">');
+    $form.append('<input type="hidden" id="age" name="age" value="' + $(".age").val() + '">');
+    $form.append('<input type="hidden" id="ageRange" name="ageRange" value="' + $(".ageRange").val() + '">');
+    $form.append('<input type="hidden" id="tall" name="tall" value="' + $(".tall").val() + '">');
+    $form.append('<input type="hidden" id="tallRange" name="tallRange" value="' + $(".tallRange").val() + '">');
+    $form.append('<input type="hidden" id="weight" name="weight" value="' + $(".weight").val() + '">');
+    $form.append('<input type="hidden" id="weightRange" name="weightRange" value="' + $(".weightRange").val() + '">');
+    $form.append('<input type="hidden" id="bmi" name="bmi" value="' + $(".bmi").val() + '">');
+    $form.append('<input type="hidden" id="bmiRange" name="bmiRange" value="' + $(".bmiRange").val() + '">');
+    $form.append('<input type="hidden" id="hand" name="hand" value="' + $(".hand").val() + '">');
+    $form.append('<input type="hidden" id="job" name="job" value="' + $(".job").val() + '">');
+    
+    $form.appendTo('body').submit();
+    
+    /* $("#dataDownExcel").attr("action", "/cmm/rehab/dataDownExcel.do").submit(); */
+    $("#dataDownExcel").remove();
+    
+});	
+
+$(document).on("click", ".detailHosDataDown", function(){	
+    
+    var diesKnd = $("#detailDiesKnd").val();
+    var userId = $("#detailUserId").val();		
+    
+    $form = $("<form id='detailHosDataDownExcel' action='/cmm/rehab/detailHosDataDownExcel.do'></form>");
+    $form.append('<input type="hidden" id="diesKnd" name="diesKnd" value="' + $("#detailDiesKnd").val() + '">');
+    $form.append('<input type="hidden" id="userId" name="userId" value="' + $("#detailUserId").val() + '">');		
+    
+    $form.appendTo('body').submit();
+    
+    /* $("#dataDownExcel").attr("action", "/cmm/rehab/dataDownExcel.do").submit(); */
+    $("#detailDataDownExcel").remove();
+    
+});	
+
+$(document).on("click", ".detailFeDataDown", function(){	
+    
+    var diesKnd = $("#detailDiesKnd").val();
+    var userId = $("#detailUserId").val();		
+    
+    $form = $("<form id='detailFeDataDownExcel' action='/cmm/rehab/detailFeDataDownExcel.do'></form>");
+    $form.append('<input type="hidden" id="diesKnd" name="diesKnd" value="' + $("#detailDiesKnd").val() + '">');
+    $form.append('<input type="hidden" id="userId" name="userId" value="' + $("#detailUserId").val() + '">');		
+    
+    $form.appendTo('body').submit();
+    
+    /* $("#dataDownExcel").attr("action", "/cmm/rehab/dataDownExcel.do").submit(); */
+    $("#detailDataDownExcel").remove();
+    
+});	
+
+$(document).on("click", "sortReset", function(){
+    sortType = "";
+    ascDesc = "";
+    getSch();
+});
+
+function sort(type){
+    if($("i").hasClass('desc')){			
+        ascDesc = "asc";
+        $("i").removeClass('desc');
+        $("i").addClass('asc');
+    }else{
+        $("i").addClass('desc');
+        ascDesc = "desc";
+    }
+    sortType = type;
+    getSch();
+}
+
+function openDetailPop(userId, userNm, table){
+    
+    var info = "";
+    if(table == "hos"){
+        info = userNm + "님 병원데이터 정보 상세보기";
+    }else{
+        info = userNm + "님 기능평가데이터 정보 상세보기";
+    }
+    $(".detailHead").text(info);
+    $("#detailUserId").val(userId);
+    var diesKnd = $(".diesKnd").val();
+    $("#detailDiesKnd").val(diesKnd);
+    
+    var data = {
+            "diesKnd": $(".diesKnd").val(),
+            "userId": userId,
+            "table": table
+        };
+        
+        $.ajax({
+            url : "/cmm/rehab/showDetailPop.do",
+            type : "POST",
+            data: data,
+            dataType : "html",
+            success : function(result) {
+                if(table == "hos"){
+                    $("#borderedHosTabContent").html(result);
+                }else{
+                    $("#borderedFeTabContent").html(result);
+                }
+                
+                menuActive();
+            }, error : function(request, status, error){
+                alert("code:"+request.status+"\n"+"error:"+error);
+            }
+        });
+}
+
+function selChange(){
+            
+    var data = {
+    "cntPerPage": $("#cntPerPage").val()
+    };
+    
+    $.ajax({
+        url : "/cmm/rehab/getSearchData.do",
+        type : "POST",
+        data: data,
+        dataType : "html",
+        success : function(result) {
+            $('.schRst').html(result);	
+            menuActive();
+        }, error : function(request, status, error){
+            alert("code:"+request.status+"\n"+"error:"+error);
+        }
+    });
+}
+
+function changePage(nowPage,cntPerPage){
+    $(".pagination").find("li").removeClass("active");
+    $("."+nowPage+"page").addClass("active");
+    
+    var data = {
+            "nowPage"	 : nowPage,
+            "cntPerPage" : cntPerPage
+            };
+            
+            $.ajax({
+                url : "/cmm/rehab/getSearchData.do",
+                type : "POST",
+                data: data,
+                dataType : "html",
+                success : function(result) {
+                    $('.schRst').html(result);
+                    menuActive();
+                }, error : function(request, status, error){
+                    alert("code:"+request.status+"\n"+"error:"+error);
+                }
+            });
+} 
+
+function nextPerPage(nowPage, cntPerPage){
+    var data = {
+            "nowPage"	 : nowPage,
+            "cntPerPage" : cntPerPage
+            };
+            
+            $.ajax({
+                url : "/cmm/rehab/getSearchData.do",
+                type : "POST",
+                data: data,
+                dataType : "html",
+                success : function(result) {
+                    $('.schRst').html(result);
+                    menuActive();
+                }, error : function(request, status, error){
+                    alert("code:"+request.status+"\n"+"error:"+error);
+                }
+            });
+}
+
+function prevPerPage(nowPage, cntPerPage){
+    var data ={
+            "nowPage"	 : nowPage,
+            "cntPerPage" : cntPerPage 
+    }
+    $.ajax({
+        url : "/cmm/rehab/getSearchData.do",
+        type : "POST",
+        data: data,
+        dataType : "html",
+        success : function(result) {
+            $('.schRst').html(result);
+            menuActive();
+        }, error : function(request, status, error){
+            alert("code:"+request.status+"\n"+"error:"+error);
+        }
+    });
+}
+
+
+</script>
+
+
+<main id="main" class="main">
+
+<div class="pagetitle">
+<h1>데이터 검색</h1>
+<nav>
+  <!-- <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item">Tables</li>
+<li class="breadcrumb-item active">Data</li>
+</ol> -->
+</nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+<div class="row" style="margin-top:30px;">
+    <div class="col-lg-12">			
+        <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">검색 조건</h5> 
+          <p style="margin-top:-20px;"><code>*는 필수 입력사항입니다.</code></p>
+          <!-- Active Table -->
+          <table class="table dataSchTbl">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr>
+                <th class="table-active"><code>*</code>&nbsp;질병 종류</th>
+                <td>
+                    <input type="hidden" class="diesKndVal">
+                    <select class="form-select diesKnd">
+                        <option value="">질병 종류</option>
+                        <option value="adh">유착성 관절낭염</option>
+                        <option value="rotCuf">회전근개손상</option>
+                        <option value="lowBack">요통</option>
+                        <option>뇌졸증</option>
+                        <option>퇴행성 관절염</option>
+                        <option>요추 추간판 탈출증</option>
+                    </select>
+                </td>
+                <th class="table-active"><code>*</code>&nbsp;주 증상</th>
+                <td>
+                    <input type="hidden" class="mnSymVal">
+                    <select class="form-select mnSym">
+                        <option value="">주 증상</option>
+                        <option value="111">우측 상지 어깨</option>
+                        <option value="112">우측 상지 팔꿈치</option>
+                        <option value="113">우측 상지 손/손목</option>
+                        <option value="121">우측 하지 엉덩관절</option>
+                        <option value="122">우측 하지 무릎 </option>
+                        <option value="123">우측 하지 발/발목</option>
+                        <option value="131">우측 체간 목</option>
+                        <option value="132">우측 체간 허리</option>
+                        <option value="140">우측 기타</option>
+                        <option value="211">좌측 상지 어깨</option>
+                        <option value="212">좌측 상지 팔꿈치</option>
+                        <option value="213">좌측 상지 손/손목</option>
+                        <option value="221">좌측 하지 엉덩관절</option>
+                        <option value="222">좌측 하지 무릎</option>
+                        <option value="223">좌측 하지 발/발목</option>
+                        <option value="231">좌측 체간 목</option>
+                        <option value="232">좌측 체간 허리</option>
+                        <option value="240">좌측 기타</option>
+                    </select>
+                </td>
+                <th class="table-active">성별</th>
+                <td>
+                    <input type="hidden" class="genderVal">
+                    <select class="form-select gender">
+                        <option value="">성별</option>
+                        <option value="1">남</option>
+                        <option value="2">여</option>
+                    </select>
+                </td>
+              </tr>				  
+              <tr>
+                <th class="table-active">연령</th>
+                <td>
+                    <input type="number" class="age" value="" maxlength="3">&nbsp;세
+                    <select class="form-select ageRange">
+                        <option value="0">범위</option>
+                        <option value="0">±0</option>
+                        <option value="3">±3</option>
+                        <option value="5">±5</option>
+                        <option value="7">±7</option>
+                        <option value="10">±10</option>
+                        <option value="15">±15</option>
+                        <option value="20">±20</option>
+                        <option value="25">±25</option>
+                        <option value="30">±30</option>
+                    </select>
+                </td>
+                <th class="table-active">키</th>
+                <td>
+                    <input type="number" class="tall" value="" maxlength="3">&nbsp;cm
+                    <select class="form-select tallRange">
+                        <option value="0">범위</option>
+                        <option value="0">±0</option>
+                        <option value="3">±3</option>
+                        <option value="5">±5</option>
+                        <option value="7">±7</option>
+                        <option value="10">±10</option>
+                        <option value="15">±15</option>
+                        <option value="20">±20</option>
+                        <option value="25">±25</option>
+                        <option value="30">±30</option>
+                    </select>
+                </td>
+                <th class="table-active">몸무게</th>
+                <td>
+                    <input type="number" class="weight" value="" maxlength="3">&nbsp;kg
+                    <select class="form-select weightRange">
+                        <option value="0">범위</option>
+                        <option value="0">±0</option>
+                        <option value="3">±3</option>
+                        <option value="5">±5</option>
+                        <option value="7">±7</option>
+                        <option value="10">±10</option>
+                        <option value="15">±15</option>
+                        <option value="20">±20</option>
+                        <option value="25">±25</option>
+                        <option value="30">±30</option>
+                    </select>
+                </td>
+              </tr>
+              <tr>
+                <th class="table-active">복부둘레</th>
+                <td>
+                    <input type="number" class="bmi" value="" maxlength="3">&nbsp;cm
+                    <select class="form-select bmiRange">
+                        <option value="0">범위</option>
+                        <option value="0">±0</option>
+                        <option value="3">±3</option>
+                        <option value="5">±5</option>
+                        <option value="7">±7</option>
+                        <option value="10">±10</option>
+                        <option value="15">±15</option>
+                        <option value="20">±20</option>
+                        <option value="25">±25</option>
+                        <option value="30">±30</option>
+                    </select>
+                </td>
+                <th class="table-active">우성수</th>
+                <td>
+                    <select id="inputState" class="form-select hand">
+                        <option value="">우성수</option>
+                        <option value="1">오른손</option>
+                        <option value="2">왼손</option>
+                    </select>
+                </td>
+                <th class="table-active">직업</th>
+                <td>
+                    <select id="inputState" class="form-select job">
+                        <option value="">직업</option>
+                        <option value="1">고강도</option>
+                        <option value="2">중강도</option>
+                        <option value="3">저강도</option>
+                    </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center">
+              <button type="submit" class="btn btn-primary getSch" onclick="getSch();">검색</button>
+              <button type="reset" class="btn btn-secondary" onclick="reset();">초기화</button>
+          </div>
+          <!-- End Active Table -->
+
+        </div>
+      </div>        
+    </div>
+</div>
+          
+<div class="row">  
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">  
+                <div class="schRst" style="margin-top:20px;">						
+                    
+
+
+
+<style>
+
+</style>
+<div style="padding:10px 10px;">
+<div style="float:left">
+    
+</div>
+<div style="float:right">
+    
+</div>
+</div>
+<div class="table-box list master" style="padding-top: 30px;">
+
+<div class="text-center" style="margin-top:-50px; float:right;">
+    <!-- <button type="submit" class="btn btn-primary dataDown">데이터 다운로드</button> -->
+    <button type="submit" class="btn btn-success dataDown"><i class="bi bi-check-circle"></i>데이터 다운로드</button>
+    <!-- <button type="button" class="btn btn-danger sortReset"><i class="bi bi-exclamation-octagon"></i>정렬 초기화</button> -->
+</div>	
+<table class="table table-striped" style="width:100%;">
+    <colgroup>
+        <col width="*">
+        <col width="*">
+        <col width="*">
+        <col width="*">
+        <col width="*">
+        <col width="*">
+        <col width="*">
+        <col width="*">
+        <col width="*">
+        <col width="*">
+    </colgroup>
+    <thead style="text-align: center; border:none;">
+        <tr> 
+            <th scope="col">순번 </th>
+            <th scope="col">질병 종류</th>
+            <th scope="col">주 증상<i class="bx bx-sort-alt-2" onclick="sort('DS0008')"></i></th>
+            <th scope="col">성별<i class="bx bx-sort-alt-2" onclick="sort('DI0003')"></i></th>
+            <th scope="col">연령<i class="bx bx-sort-alt-2" onclick="sort('DI0004')"></i></th>
+            <th scope="col">키(cm)<i class="bx bx-sort-alt-2" onclick="sort('DI0006')"></i></th>
+            <th scope="col">몸무게(kg)<i class="bx bx-sort-alt-2" onclick="sort('DI0007')"></i></th>
+            <th scope="col">복부둘레(cm)<i class="bx bx-sort-alt-2" onclick="sort('DI0009')"></i></th>
+            <th scope="col">우성수<i class="bx bx-sort-alt-2" onclick="sort('DS0001')"></i></th>
+            <th scope="col">직업<i class="bx bx-sort-alt-2" onclick="sort('RP0005')"></i></th>           
+            <th scope="col">상세보기</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody" style="text-align: center;">
+        
+            
+            
+                
+            
+                       
+                        
+    </tbody>
+</table>	
+</div>
+<div class="modal fade" id="ExtralargeModalHos" tabindex="-1">
+<div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title"><span class="detailHead"></span></h5>
+            <input type="hidden" id="detailUserId" value="">
+            <input type="hidden" id="detailDiesKnd" value="">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTabHos" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="di-tab-hos" data-bs-toggle="tab" data-bs-target="#bordered-di-hos" type="button" role="tab" aria-controls="di" aria-selected="true">인구통계정보(DI)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ds-tab-hos" data-bs-toggle="tab" data-bs-target="#bordered-ds-hos" type="button" role="tab" aria-controls="ds" aria-selected="false">진단치료정보(DS)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="rp-tab-hos" data-bs-toggle="tab" data-bs-target="#bordered-rp-hos" type="button" role="tab" aria-controls="rp" aria-selected="false">위험도 예측정보(RP)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fe-tab-hos" data-bs-toggle="tab" data-bs-target="#bordered-fe-hos" type="button" role="tab" aria-controls="fe" aria-selected="false">기능 평가정보(FE)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fc-tab-hos" data-bs-toggle="tab" data-bs-target="#bordered-fc-hos" type="button" role="tab" aria-controls="fc" aria-selected="false">기능 평가정보(FC)</button>
+                </li>
+            </ul>
+            
+            
+            
+            
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success detailHosDataDown"><i class="bi bi-check-circle"></i>데이터 다운로드</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div><!-- End Extra Large Modal-->
+
+<div class="modal fade" id="ExtralargeModalFe" tabindex="-1">
+<div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title"><span class="detailHead"></span></h5>
+            <input type="hidden" id="detailUserId" value="">
+            <input type="hidden" id="detailDiesKnd" value="">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTabFe" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="di-tab-fe" data-bs-toggle="tab" data-bs-target="#bordered-di-fe" type="button" role="tab" aria-controls="di" aria-selected="true">인구통계정보(DI)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fe-tab-fe" data-bs-toggle="tab" data-bs-target="#bordered-fe-fe" type="button" role="tab" aria-controls="fe" aria-selected="false">기능 평가정보(FE)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fc-tab-fe" data-bs-toggle="tab" data-bs-target="#bordered-fc-fe" type="button" role="tab" aria-controls="fc" aria-selected="false">기능 평가정보(FC)</button>
+                </li>
+            </ul>
+            
+            
+            
+            
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success detailFeDataDown"><i class="bi bi-check-circle"></i>데이터 다운로드</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+</main><!-- End #main -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    </div>
+
+</div>
+
+<!-- ======================
+footer
+======================= -->
+
+<!-- ======================
+END footer
+======================= -->
+
+
+
+</sec:csrfmetatags><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>
