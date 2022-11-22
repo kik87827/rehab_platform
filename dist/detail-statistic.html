@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta http-equiv="Content-Type" content="text/html;  charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">/* Chart.js */
+/*
+* DOM element rendering detection
+* https://davidwalsh.name/detect-node-insertion
+*/
+@keyframes chartjs-render-animation {
+from { opacity: 0.99; }
+to { opacity: 1; }
+}
+
+.chartjs-render-monitor {
+animation: chartjs-render-animation 0.001s;
+}
+
+/*
+* DOM element resizing detection
+* https://github.com/marcj/css-element-queries
+*/
+.chartjs-size-monitor,
+.chartjs-size-monitor-expand,
+.chartjs-size-monitor-shrink {
+position: absolute;
+direction: ltr;
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+overflow: hidden;
+pointer-events: none;
+visibility: hidden;
+z-index: -1;
+}
+
+.chartjs-size-monitor-expand > div {
+position: absolute;
+width: 1000000px;
+height: 1000000px;
+left: 0;
+top: 0;
+}
+
+.chartjs-size-monitor-shrink > div {
+position: absolute;
+width: 200%;
+height: 200%;
+left: 0;
+top: 0;
+}
+</style></head><body style="overflow-x: hidden;" class="body"><sec:csrfmetatags>
+    
+
+
+ <!-- Favicons -->
+<link href="./assets/img/favicon.png" rel="icon">
+<link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="./assets/vendor/quill/quill.snow.css" rel="stylesheet">
+<link href="./assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+<link href="./assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="./assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="./assets/css/style.css" rel="stylesheet">
+
+<!-- =======================================================
+* Template Name: NiceAdmin - v2.2.2
+* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+======================================================== -->
+
+<!-- Vendor JS Files -->
+<script src="./assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/vendor/chart.js/chart.min.js"></script>
+<script src="./assets/vendor/echarts/echarts.min.js"></script>
+<script src="./assets/vendor/quill/quill.min.js"></script>
+<script src="./assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="./assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="./assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="./assets/js/main.js"></script>
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <title>Rehab</title>
+
+
+<!-- ======================
+header
+======================= -->
+
+
+
+
+<script>	
+$(document).on("click", ".toggle-sidebar-btn", function(){
+    if($(".body").hasClass("toggle-sidebar")){
+        $(".body").removeClass("toggle-sidebar");
+    }else{
+        $(".body").addClass("toggle-sidebar");
+    }
+    
+});
+</script>
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+<div class="d-flex align-items-center justify-content-between">
+  <a href="mainPage.do" class="logo d-flex align-items-center">
+    <img src="./assets/img/logo.png" alt="">
+    <span class="d-none d-lg-block">Rehab Platform</span>
+  </a>
+  <i class="bi bi-list toggle-sidebar-btn"></i>
+</div><!-- End Logo -->
+
+<div class="search-bar">
+  <form class="search-form d-flex align-items-center" method="POST" action="#">
+    <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+  </form>
+</div><!-- End Search Bar -->
+
+<nav class="header-nav ms-auto">
+  <ul class="d-flex align-items-center">
+
+    <li class="nav-item d-block d-lg-none">
+      <a class="nav-link nav-icon search-bar-toggle collapsed" href="#">
+        <i class="bi bi-search"></i>
+      </a>
+    </li><!-- End Search Icon-->
+
+    <li class="nav-item dropdown">
+
+      <a class="nav-link nav-icon collapsed" href="#" data-bs-toggle="dropdown">
+        <i class="bi bi-bell"></i>
+        <span class="badge bg-primary badge-number">4</span>
+      </a><!-- End Notification Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+        <li class="dropdown-header">
+          You have 4 new notifications
+          <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="notification-item">
+          <i class="bi bi-exclamation-circle text-warning"></i>
+          <div>
+            <h4>Lorem Ipsum</h4>
+            <p>Quae dolorem earum veritatis oditseno</p>
+            <p>30 min. ago</p>
+          </div>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="notification-item">
+          <i class="bi bi-x-circle text-danger"></i>
+          <div>
+            <h4>Atque rerum nesciunt</h4>
+            <p>Quae dolorem earum veritatis oditseno</p>
+            <p>1 hr. ago</p>
+          </div>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="notification-item">
+          <i class="bi bi-check-circle text-success"></i>
+          <div>
+            <h4>Sit rerum fuga</h4>
+            <p>Quae dolorem earum veritatis oditseno</p>
+            <p>2 hrs. ago</p>
+          </div>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="notification-item">
+          <i class="bi bi-info-circle text-primary"></i>
+          <div>
+            <h4>Dicta reprehenderit</h4>
+            <p>Quae dolorem earum veritatis oditseno</p>
+            <p>4 hrs. ago</p>
+          </div>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li class="dropdown-footer">
+          <a href="#">Show all notifications</a>
+        </li>
+
+      </ul><!-- End Notification Dropdown Items -->
+
+    </li><!-- End Notification Nav -->
+
+    <li class="nav-item dropdown">
+
+      <a class="nav-link nav-icon collapsed" href="#" data-bs-toggle="dropdown">
+        <i class="bi bi-chat-left-text"></i>
+        <span class="badge bg-success badge-number">3</span>
+      </a><!-- End Messages Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+        <li class="dropdown-header">
+          You have 3 new messages
+          <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="message-item">
+          <a href="#">
+            <img src="./assets/img/messages-1.jpg" alt="" class="rounded-circle">
+            <div>
+              <h4>Maria Hudson</h4>
+              <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+              <p>4 hrs. ago</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="message-item">
+          <a href="#">
+            <img src="./assets/img/messages-2.jpg" alt="" class="rounded-circle">
+            <div>
+              <h4>Anna Nelson</h4>
+              <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+              <p>6 hrs. ago</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="message-item">
+          <a href="#">
+            <img src="./assets/img/messages-3.jpg" alt="" class="rounded-circle">
+            <div>
+              <h4>David Muldon</h4>
+              <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+              <p>8 hrs. ago</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li class="dropdown-footer">
+          <a href="#">Show all messages</a>
+        </li>
+
+      </ul><!-- End Messages Dropdown Items -->
+
+    </li><!-- End Messages Nav -->
+
+    <li class="nav-item dropdown pe-3">
+
+      <a class="nav-link nav-profile d-flex align-items-center pe-0 collapsed" href="#" data-bs-toggle="dropdown">
+        <img src="./assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+        <span class="d-none d-md-block dropdown-toggle ps-2">SangWon Kim</span>
+      </a><!-- End Profile Iamge Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <li class="dropdown-header">
+          <h6>SangWon Kim</h6>
+          <span>Web Programer</span>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-gear"></i>
+            <span>Account Settings</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+            <i class="bi bi-question-circle"></i>
+            <span>Need Help?</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <i class="bi bi-box-arrow-right"></i>
+            <span><button type="button" onclick="location.href='/cmm/join/login.do'" style="border:none; background-color: white;">Sign Out</button></span>
+          </a>
+        </li>
+
+      </ul><!-- End Profile Dropdown Items -->
+    </li><!-- End Profile Nav -->
+
+  </ul>
+</nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+
+<!-- ======================
+END header
+======================= -->
+
+<div id="layout" class="on"> 
+    <!-- side menu -->
+    <div id="sideMenu">
+        <div style="position: fixed;">
+            
+
+
+
+<!-- <script>
+function subMenu(){
+    
+    $(".nav-item >a").addClass("collapsed");
+    $(this).parent().parent().parent().find("a").removeClass("collapsed");
+    $(this).addClass("active");
+}
+
+
+</script> -->
+
+<aside id="sidebar" class="sidebar">
+
+<ul class="sidebar-nav" id="sidebar-nav">
+  <li class="nav-heading">Dash board</li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="mainPage.do">
+      <i class="bi bi-grid"></i>
+      <span>종합현황</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
+    
+  <li class="nav-heading">Analysis</li>
+      
+  <li class="nav-item">
+      <a class="nav-link dataSch collapsed" href="dataSch.do">
+          <i class="bi bi-menu-button-wide"></i>
+          <span>데이터 검색</span>
+      </a>
+  </li>
+  
+  <li class="nav-item">
+      <a class="nav-link detailStatis active" href="detailStatis.do">
+          <i class="bi bi-bar-chart"></i>
+          <span>상세 통계</span>
+      </a>
+  </li>
+  
+  <li class="nav-item">
+       <a class="nav-link userAnalysis collapsed" href="userAnalysis.do">
+      <!-- <a class="nav-link userAnalysis collapsed" href="#"> -->
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>사용자 통계</span>
+      </a>
+  </li>
+
+ <!--  <li class="nav-heading">Pages</li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="bi bi-person"></i>
+      <span>Profile</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="bi bi-question-circle"></i>
+      <span>F.A.Q</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="bi bi-envelope"></i>
+      <span>Contact</span>
+    </a>
+  </li> -->
+
+  <!-- <li class="nav-item">
+    <a class="nav-link collapsed" href="pages-register.html">
+      <i class="bi bi-card-list"></i>
+      <span>Register</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pages-login.html">
+      <i class="bi bi-box-arrow-in-right"></i>
+      <span>Login</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pages-error-404.html">
+      <i class="bi bi-dash-circle"></i>
+      <span>Error 404</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pages-blank.html">
+      <i class="bi bi-file-earmark"></i>
+      <span>Blank</span>
+    </a>
+  </li> -->
+
+</ul>
+
+</aside><!-- End Sidebar-->
+
+<!-- <div class="openCon"><button type="button" class="sideMenuOpen">O<br>P<br>E<br>N</button></div> -->
+
+
+        </div>
+    </div>
+    <!-- END  side menu -->
+
+    <div>
+        
+
+
+
+
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<!-- <title>Tables / Data - NiceAdmin Bootstrap Template</title> -->
+<meta content="" name="description">
+<meta content="" name="keywords">
+
+
+
+<style>
+.col-lg-4{
+float: left;
+margin-right: 10px;
+margin-left: 10px;
+width: 31.5%;
+}
+
+.col-lg-3{
+float: left;
+margin-right: 10px;
+margin-left: 10px;
+width: 31.5%;
+}
+
+.card{
+/* height: 350px; */
+}
+</style>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">	
+
+$(document).ready(function(){		
+    /* $(".nav-item >a").addClass("collapsed");
+    $(".detailStatis").parent().parent().parent().find("a").removeClass("collapsed");
+    $(".detailStatis").parent().parent().addClass("show");
+    $(".detailStatis").addClass("active");	 */	
+    $(".nav-item >a").addClass("collapsed");
+    $(".detailStatis").removeClass("collapsed");
+    $(".detailStatis").addClass("active");
+});
+
+function menuActive(){
+    /* $(".nav-item >a").addClass("collapsed");
+    $(".detailStatis").parent().parent().parent().find("a").removeClass("collapsed");
+    $(".detailStatis").parent().parent().addClass("show");
+    $(".detailStatis").addClass("active"); */
+    $(".nav-item >a").addClass("collapsed");
+    $(".detailStatis").removeClass("collapsed");
+    $(".detailStatis").addClass("active");
+}
+
+function reset(){
+    $(".diesKnd").val("");
+    $(".mnSym").val("");
+    $(".gender").val("");
+    $(".age").val("");
+    $(".ageRange").val(0);
+    $(".tall").val("");
+    $(".tallRange").val(0);
+    $(".weight").val("");
+    $(".weightRange").val(0);
+    $(".bmi").val("");
+    $(".bmiRange").val(0);
+    $(".hand").val("");
+    $(".job").val("");
+}
+
+function getSch(){
+    var diesKnd = $(".diesKnd").val();
+    var mnSym = $(".mnSym").val();
+    
+    if(diesKnd == "" || mnSym == ""){
+        alert("질병 종류, 주 증상은 필수 선택 사항입니다.");
+        return;
+    };
+            
+    var data = {
+        "diesKnd": $(".diesKnd").val(),
+        "mnSym" : $(".mnSym").val(),
+        "gender" : $(".gender").val(),
+        "age" : $(".age").val(),
+        "ageRange" : $(".ageRange").val(),
+        "tall" : $(".tall").val(),
+        "tallRagne" : $(".tallRange").val(),
+        "weight" : $(".weight").val(),
+        "weightRange" : $(".weightRange").val(),
+        "bmi" : $(".bmi").val(),
+        "bmiRange" : $(".bmiRange").val(),
+        "hand" : $(".hand").val(),
+        "job" : $(".job").val()
+    };
+    
+    $.ajax({
+        url : "/cmm/rehab/getSearchData.do",
+        type : "POST",
+        data: data,
+        dataType : "html",
+        success : function(result) {
+            $('.schRst').html(result);
+            menuActive();
+        }, error : function(request, status, error){
+            alert("code:"+request.status+"\n"+"error:"+error);
+        }
+    });
+    
+};
+
+
+
+</script>
+
+
+<main id="main" class="main">
+
+<div class="pagetitle">
+<h1>데이터 검색</h1>
+<nav>
+  <!-- <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item">Tables</li>
+<li class="breadcrumb-item active">Data</li>
+</ol> -->
+</nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+<div class="row" style="margin-top:30px;">
+    <div class="col-lg-12">			
+        <div class="card" style="height: 180px;">
+        <div class="card-body">
+         
+          <!-- Active Table -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr>
+                <th class="table-active">질병 종류</th>
+                <td colspan="4">
+                    <input type="hidden" class="diesKndVal">
+                    <select class="form-select diesKnd">
+                        <option value="adh">유착성 관절낭염</option>
+                        <option value="rotCuf">회전근개손상</option>
+                        <option value="lowBack">요통</option>
+                        <option>뇌졸증</option>
+                        <option>퇴행성 관절염</option>
+                        <option>요추 추간판 탈출증</option>
+                    </select>
+                </td>					
+              </tr>
+              <tr>
+                <th class="table-active">&nbsp;통계</th>
+                <td colspan="4">
+                    <div class="col-sm-10">
+                        <!-- <div class="form-check">
+                          <input class="form-check-input" type="radio" name="contact" id="mnSymRad" value="mnSym" checked>
+                          <label class="form-check-label" for="mnSymRad">주 증상</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="contact" id="yearRad" value="year">
+                          <label class="form-check-label" for="yearRad">연도</label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="contact" id="genderRad" value="gender">
+                          <label class="form-check-label" for="genderRad">성별</label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="contact" id="ageRad" value="age">
+                          <label class="form-check-label" for="ageRad">연령</label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="contact" id="bmiRad" value="bmi">
+                          <label class="form-check-label" for="bmiRad">BMI</label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="contact" id="abdRad" value="abd">
+                          <label class="form-check-label" for="abdRad">복부둘레</label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="contact" id="handRad" value="hand">
+                          <label class="form-check-label" for="handRad">우성수</label>
+                        </div> -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="contact" id="dsRad" value="DI" checked="">
+                          <label class="form-check-label" for="dsRad">인구통계정보(DI)</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="contact" id="dsRad" value="DS">
+                          <label class="form-check-label" for="dsRad">진단치료정보(DS)</label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="contact" id="rpRad" value="RP">
+                          <label class="form-check-label" for="rpRad">위험도예측정보(RP)</label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="contact" id="feRad" value="FE">
+                          <label class="form-check-label" for="feRad">기능평가정보(FE)</label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="contact" id="fcRad" value="FC">
+                          <label class="form-check-label" for="fcRad">기능평가정보(FC)</label>
+                        </div>		                    
+                  </div>
+                </td>					
+              </tr>				  
+            </tbody>
+          </table>
+          <div class="text-center">
+              <button type="submit" class="btn btn-primary showStatis" onclick="showChart();">통계 차트 보기</button>
+          </div>
+          <!-- End Active Table -->
+
+        </div>
+      </div>        
+    </div>
+</div>
+<!--             
+<div class="row" >
+    <div class="col-lg-12">			
+        <div class="card">
+        <div class="card-body">
+         <table class="table dataSchTbl">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th colspan="3" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr>
+                <th class="table-active card-title1"></th>
+                <td  class="dataVal1" style="width:90%;"></td>
+              </tr>	
+              <tr>
+                <th class="table-active card-title2"></th>
+                <td class="dataVal2" style="width:90%;"></td>
+              </tr>	
+              <tr>
+                <th class="table-active card-title3"></th>
+                <td class="dataVal3" style="width:90%;"></td>
+              </tr>				  
+              <tr>
+                <th class="table-active card-title4"></th>
+                <td class="dataVal4" style="width:90%;"></td>
+              </tr>
+              <tr>
+                <th class="table-active card-title5"></th>
+                <td class="dataVal5" style="width:90%;"></td>
+              </tr>
+              <tr>
+                <th class="table-active card-title6"></th>
+                <td class="dataVal6" style="width:90%;"></td>
+              </tr>
+              <tr>
+                <th class="table-active card-title7"></th>
+                <td class="dataVal7" style="width:90%;"></td>
+              </tr>
+              <tr>
+                <th class="table-active card-title8"></th>
+                <td class="dataVal8" style="width:90%;"></td>
+              </tr>
+              <tr>
+                <th class="table-active card-title9"></th>
+                <td class="dataVal9" style="width:90%;"></td>
+              </tr>
+               <tr>
+                <th class="table-active card-title10"></th>
+                <td class="dataVal10" style="width:90%;"></td>
+              </tr>
+               <tr>
+                <th class="table-active card-title11"></th>
+                <td class="dataVal11" style="width:90%;"></td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>        
+    </div>
+</div>    
+-->
+<!-- <div class="col-lg-12">
+    <div class="card">
+        <div class="card-body"> -->
+        <div>
+            <div class="col-lg-3 chart1">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title1">DI0002</h5>
+                       <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>								
+                        <canvas id="ChartJS1" style="max-height: 300px; display: block; height: 298px; width: 347px;" width="433" height="372" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 chart2">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title2">DI0003</h5>
+                       <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>								
+                        <canvas id="ChartJS2" style="max-height: 300px; display: block; height: 298px; width: 347px;" width="433" height="372" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>	
+            <div class="col-lg-3 chart3">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title3">DI0004</h5>
+                       <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>								
+                        <canvas id="ChartJS3" style="max-height: 300px; display: block; height: 298px; width: 347px;" width="433" height="372" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 chart4">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title4">DI0006</h5>
+                       <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>								
+                        <canvas id="ChartJS4" style="max-height: 300px; display: block; height: 298px; width: 347px;" width="433" height="372" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>	
+            <div class="col-lg-3 chart5">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title5">DI0007</h5>
+                       <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>								
+                        <canvas id="ChartJS5" style="max-height: 300px; display: block; height: 298px; width: 347px;" width="433" height="372" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>	
+            <div class="col-lg-3 chart6">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title6">DI0008</h5>
+                       <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>								
+                        <canvas id="ChartJS6" style="max-height: 300px; display: block; height: 298px; width: 347px;" width="433" height="372" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>	
+            <div class="col-lg-3 chart7">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title7">DI0009</h5>
+                       <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>								
+                        <canvas id="ChartJS7" style="max-height: 300px; display: block; height: 298px; width: 347px;" width="433" height="372" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>	
+            <div class="col-lg-3 chart8" style="display: none;">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title8"></h5>
+                       <div class="card-body">								
+                        <canvas id="ChartJS8" style="max-height: 300px; display: block; height: 0px; width: 0px;" height="0" width="0" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>	
+            <div class="col-lg-3 chart9" style="display: none;">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title9"></h5>
+                       <div class="card-body">								
+                        <canvas id="ChartJS9" style="max-height: 300px; display: block; height: 0px; width: 0px;" height="0" width="0" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>	
+            <div class="col-lg-3 chart10" style="display: none;">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title10"></h5>
+                       <div class="card-body">								
+                        <canvas id="ChartJS10" style="max-height: 300px; display: block; height: 0px; width: 0px;" height="0" width="0" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 chart11" style="display: none;">
+                <div class="card" style="height:350px;">
+                    <h5 class="card-title11"></h5>
+                       <div class="card-body">								
+                        <canvas id="ChartJS11" style="max-height: 300px; display: block; height: 0px; width: 0px;" height="0" width="0" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>												
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script> 			
+            <script>
+                var xList1 = [];
+                var yList1 = [];
+                var yPerList1 = [];
+                var xList2 = [];
+                var yList2 = [];
+                var yPerList2 = [];
+                var xList3 = [];
+                var yList3 = [];
+                var yPerList3 = [];
+                var xList4 = [];
+                var yList4 = [];
+                var yPerList4 = [];					
+                var xList5 = [];
+                var yList5 = [];
+                var yPerList5 = [];					
+                var xList6 = [];
+                var yList6 = [];
+                var yPerList6 = [];					
+                var xList7 = [];
+                var yList7 = [];
+                var yPerList7 = [];					
+                var xList8 = [];
+                var yList8 = [];
+                var yPerList8 = [];					
+                var xList9 = [];
+                var yList9 = [];
+                var yPerList9 = [];
+                var xList10 = [];
+                var yList10 = [];
+                var yPerList10 = [];
+                var xList11 = [];
+                var yList11 = [];
+                var yPerList11 = [];
+                                    
+                var myChart1;
+                var myChart2;
+                var myChart3;
+                var myChart4;
+                var myChart5;
+                var myChart6;
+                var myChart7;
+                var myChart8;
+                var myChart9;
+                var myChart10;
+                var myChart11;
+                var chartFlag = false;
+                
+                $(document).ready(function(){
+                    /* const ctx1 = document.getElementById('ChartJS1').getContext('2d');
+                    const ctx2 = document.getElementById('ChartJS2').getContext('2d');
+                    const ctx3 = document.getElementById('ChartJS3').getContext('2d');
+                    const ctx4 = document.getElementById('ChartJS4').getContext('2d');
+                    const ctx5 = document.getElementById('ChartJS5').getContext('2d');
+                    const ctx6 = document.getElementById('ChartJS6').getContext('2d');
+                    const ctx7 = document.getElementById('ChartJS7').getContext('2d');
+                    const ctx8 = document.getElementById('ChartJS8').getContext('2d');
+                    const ctx9 = document.getElementById('ChartJS9').getContext('2d');
+                    const ctx10 = document.getElementById('ChartJS10').getContext('2d');
+                    const ctx11 = document.getElementById('ChartJS11').getContext('2d'); */
+                    showChart();
+                    showData();
+                });					
+                
+                function showData(){
+                    var diesKnd = $(".diesKnd").val();
+                      
+                    var radio = document.getElementsByName("contact");
+                    for(var radio of radio){
+                        if(radio.checked){
+                            var code = radio.value;
+                            
+                        }
+                    }						
+                    
+                    if(code == 'DI' || code == 'FE'){
+                        $(".chart8").hide();
+                        $(".chart9").hide();
+                        $(".chart10").hide();
+                        $(".chart11").hide();
+                    }else if(code == 'DS'){
+                        $(".chart8").show();
+                        $(".chart9").show();
+                        $(".chart10").hide();
+                        $(".chart11").hide();
+                    }else if(code == 'RP'){
+                        $(".chart8").show();
+                        $(".chart9").show();
+                        $(".chart10").show();
+                        $(".chart11").show();
+                    }
+                    
+                }
+                
+                var length = 20;					
+                var background = [];
+                var border = [];
+                for(var i=1; i<length; i++){
+                    var rgb_r = Math.floor(Math.random() * (255 + 1));
+                    var rgb_g = Math.floor(Math.random() * (255 + 1));
+                    var rgb_b = Math.floor(Math.random() * (255 + 1));
+                    var background_rgba = "rgba(" + rgb_r + "," + rgb_g + "," + rgb_b + ",0.3)";
+                    var border_rgb = "rgb(" + rgb_r + "," + rgb_g + "," + rgb_b + ")";
+                    background.push(background_rgba);
+                    border.push(border_rgb);
+                }
+                
+                function barChartDrw1(xAxes1){						
+                    var ctx1 = document.getElementById('ChartJS1').getContext('2d');
+                    var config1 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList1,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList1,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList1
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes1
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart1 = new Chart(ctx1, config1);						
+                }
+                function barChartDrw2(xAxes2){						
+                    var ctx2 = document.getElementById('ChartJS2').getContext('2d');
+                    var config2 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList2,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList2,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList2
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes2
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart2 = new Chart(ctx2, config2);						
+                }
+                function barChartDrw3(xAxes3){						
+                    var ctx3 = document.getElementById('ChartJS3').getContext('2d');
+                    var config3 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList3,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList3,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList3
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes3
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart3 = new Chart(ctx3, config3);						
+                }
+                function barChartDrw4(xAxes4){						
+                    var ctx4 = document.getElementById('ChartJS4').getContext('2d');
+                    var config4 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList4,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList4,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList4
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes4
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart4 = new Chart(ctx4, config4);						
+                }
+                function barChartDrw5(xAxes5){						
+                    var ctx5 = document.getElementById('ChartJS5').getContext('2d');
+                    var config5 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList5,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList5,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList5
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes5
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart5 = new Chart(ctx5, config5);						
+                }
+                function barChartDrw6(xAxes6){						
+                    var ctx6 = document.getElementById('ChartJS6').getContext('2d');
+                    var config6 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList6,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList6,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList6
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes6
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart6 = new Chart(ctx6, config6);						
+                }
+                function barChartDrw7(xAxes7){						
+                    var ctx7 = document.getElementById('ChartJS7').getContext('2d');
+                    var config7 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList7,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList7,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList7
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes7
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart7 = new Chart(ctx7, config7);						
+                }
+                function barChartDrw8(xAxes8){						
+                    var ctx8 = document.getElementById('ChartJS8').getContext('2d');
+                    var config8 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList8,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList8,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList8
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes8
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart8 = new Chart(ctx8, config8);						
+                }
+                function barChartDrw9(xAxes9){						
+                    var ctx9 = document.getElementById('ChartJS9').getContext('2d');
+                    var config9 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList9,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList9,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList9
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes9
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart9 = new Chart(ctx9, config9);						
+                }
+                function barChartDrw10(xAxes10){						
+                    var ctx10 = document.getElementById('ChartJS10').getContext('2d');
+                    var config10 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList10,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList10,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList10
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes10
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart10 = new Chart(ctx10, config10);						
+                }
+                function barChartDrw11(xAxes11){						
+                    var ctx11 = document.getElementById('ChartJS11').getContext('2d');
+                    var config11 = {
+                            type: 'bar',
+                            data: {
+                                labels: xList11,
+                                datasets: [{   
+                                    label: '건수',
+                                    type: 'bar',
+                                    fill: false,
+                                    data: yList11,
+                                    backgroundColor: background,
+                                    borderColor: border,
+                                    borderWidth: 1
+                                },{
+                                    label: '비율',
+                                    type: 'line',
+                                    fill: false,
+                                    lineTension: 0.2,
+                                    pointRadius: 3,
+                                    backgroundColor: 'rgb(255,153,0)',
+                                    borderColor: 'rgb(255,153,0)',
+                                    data: yPerList11
+                                }]
+                                },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    /* y: {
+                                        beginAtZero: true
+                                    }, */
+                                    yAxes: [{
+                                        stacked: false,
+                                        scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: '건수'
+                                        },
+                                        ticks: {
+                                              fontColor: 'black',
+                                              fontSize: 15,
+                                              min: 0,
+                                              beginAtZero: true
+                                            },
+                                    }],
+                                      xAxes: [{
+                                          stacked: false,
+                                          scaleLabel: {
+                                            display: true,
+                                            fontSize: 15,
+                                            labelString: xAxes11
+                                          },
+                                          ticks: {
+                                            fontColor: 'black',
+                                            fontSize: 15,
+                                            min: 0
+                                          }        
+                                        }]	
+                                },
+                                plugins: {
+                                    legend:{
+                                        display: false
+                                    }
+                                }
+                            }
+                    };
+                    myChart11 = new Chart(ctx11, config11);						
+                }
+                
+                function showChart(){
+                    var diesKnd = $(".diesKnd").val();
+          
+                    var radio = document.getElementsByName("contact");
+                    for(var radio of radio){
+                        if(radio.checked){
+                            var code = radio.value;
+                            
+                        }
+                    }			
+                    /* var xAxes = $("input[name=contact]:checked").next().text(); */
+                    
+                    var data = {
+                        "diesKnd": diesKnd,
+                        "code" : code
+                    };
+                    
+                    $.ajax({
+                        url : "/cmm/rehab/getSearchDataStatis.do",
+                        type : "POST",
+                        data: data,
+                        dataType : "json",
+                        success : function(result) {
+                            if(code == 'DI'){
+                                $(".card-title1").text('DI0002');
+                                var xAxes1 = 'DI0002';
+                                $(".card-title2").text('DI0003');
+                                var xAxes2 = 'DI0003';
+                                $(".card-title3").text('DI0004');
+                                var xAxes3 = 'DI0004';
+                                $(".card-title4").text('DI0006');
+                                var xAxes4 = 'DI0006';
+                                $(".card-title5").text('DI0007');
+                                var xAxes5 = 'DI0007';
+                                $(".card-title6").text('DI0008');
+                                var xAxes6 = 'DI0008';
+                                $(".card-title7").text('DI0009');
+                                var xAxes7 = 'DI0009';
+                            }else if(code == 'DS'){
+                                $(".card-title1").text('DS0001');
+                                var xAxes1 = 'DS0001';
+                                $(".card-title2").text('DS0002');
+                                var xAxes2 = 'DS0002';
+                                $(".card-title3").text('DS0003');
+                                var xAxes3 = 'DS0003';
+                                $(".card-title4").text('DS0006');
+                                var xAxes4 = 'DS0006';
+                                $(".card-title5").text('DS0007');
+                                var xAxes5 = 'DS0007';
+                                $(".card-title6").text('DS0008');
+                                var xAxes6 = 'DS0008';
+                                $(".card-title7").text('DS0013');
+                                var xAxes7 = 'DS0013';
+                                $(".card-title8").text('DS0015');
+                                var xAxes8 = 'DS0015';
+                                $(".card-title9").text('DS0016');
+                                var xAxes9 = 'DS0016';
+                            }else if(code == 'RP'){
+                                $(".card-title1").text('RP0001');
+                                var xAxes1 = 'RP0001';
+                                $(".card-title2").text('RP0002');
+                                var xAxes2 = 'RP0002';
+                                $(".card-title3").text('RP0003');
+                                var xAxes3 = 'RP0003';
+                                $(".card-title4").text('RP0004');
+                                var xAxes4 = 'RP0004';
+                                $(".card-title5").text('RP0005');
+                                var xAxes5 = 'RP0005';
+                                $(".card-title6").text('RP0007');
+                                var xAxes6 = 'RP0007';
+                                $(".card-title7").text('RP0010');
+                                var xAxes7 = 'RP0010';
+                                $(".card-title8").text('RP0011');
+                                var xAxes8 = 'RP0011';
+                                $(".card-title9").text('RP0013');
+                                var xAxes9 = 'RP0013';
+                                $(".card-title10").text('RP0067');
+                                var xAxes10 = 'RP0067';
+                                $(".card-title11").text('RP0054');
+                                var xAxes11 = 'RP0054';
+                            }else if(code == 'FE'){
+                                $(".card-title1").text('FE0088');
+                                var xAxes1 = 'FE0088';
+                                $(".card-title2").text('FE0090');
+                                var xAxes2 = 'FE0090';
+                                $(".card-title3").text('FE0092');
+                                var xAxes3 = 'FE0092';
+                                $(".card-title4").text('FE0094');
+                                var xAxes4 = 'FE0094';
+                                $(".card-title5").text('FE0097');
+                                var xAxes5 = 'FE0097';
+                                $(".card-title6").text('FE0101');
+                                var xAxes6 = 'FE0101';
+                                $(".card-title7").text('FE0103');
+                                var xAxes7 = 'FE0103';
+                            }
+                            $.each(result, function(i, dataList){
+                                if(code == 'DI'){
+                                    if(dataList.code == 'DI0002'){
+                                        xList1.push(dataList.di0002);
+                                        yList1.push(dataList.di0002cnt);
+                                        yPerList1.push(dataList.di0002per);										
+                                    }else if(dataList.code == 'DI0003'){
+                                        xList2.push(dataList.di0003);
+                                        yList2.push(dataList.di0003cnt);
+                                        yPerList2.push(dataList.di0003per);
+                                    }else if(dataList.code == 'DI0004'){
+                                        xList3.push(dataList.di0004);
+                                        yList3.push(dataList.di0004cnt);
+                                        yPerList3.push(dataList.di0004per);
+                                    }else if(dataList.code == 'DI0006'){
+                                        xList4.push(dataList.di0006);
+                                        yList4.push(dataList.di0006cnt);
+                                        yPerList4.push(dataList.di0006per);
+                                    }else if(dataList.code == 'DI0007'){
+                                        xList5.push(dataList.di0007);
+                                        yList5.push(dataList.di0007cnt);
+                                        yPerList5.push(dataList.di0007per);
+                                    }else if(dataList.code == 'DI0008'){
+                                        xList6.push(dataList.di0008);
+                                        yList6.push(dataList.di0008cnt);
+                                        yPerList6.push(dataList.di0008per);
+                                    }else if(dataList.code == 'DI0009'){
+                                        xList7.push(dataList.di0009);
+                                        yList7.push(dataList.di0009cnt);
+                                        yPerList7.push(dataList.di0009per);
+                                    }	
+                                }else if(code == 'DS'){
+                                    if(dataList.code == 'DS0001'){
+                                        xList1.push(dataList.ds0001);
+                                        yList1.push(dataList.ds0001cnt);
+                                        yPerList1.push(dataList.ds0001per);										
+                                    }else if(dataList.code == 'DS0002'){
+                                        xList2.push(dataList.ds0002);
+                                        yList2.push(dataList.ds0002cnt);
+                                        yPerList2.push(dataList.ds0002per);
+                                    }else if(dataList.code == 'DS0003'){
+                                        xList3.push(dataList.ds0003);
+                                        yList3.push(dataList.ds0003cnt);
+                                        yPerList3.push(dataList.ds0003per);
+                                    }else if(dataList.code == 'DS0006'){
+                                        xList4.push(dataList.ds0006);
+                                        yList4.push(dataList.ds0006cnt);
+                                        yPerList4.push(dataList.ds0006per);
+                                    }else if(dataList.code == 'DS0007'){
+                                        xList5.push(dataList.ds0007);
+                                        yList5.push(dataList.ds0007cnt);
+                                        yPerList5.push(dataList.ds0007per);
+                                    }else if(dataList.code == 'DS0008'){
+                                        xList6.push(dataList.ds0008);
+                                        yList6.push(dataList.ds0008cnt);
+                                        yPerList6.push(dataList.ds0008per);
+                                    }else if(dataList.code == 'DS0013'){
+                                        xList7.push(dataList.ds0013);
+                                        yList7.push(dataList.ds0013cnt);
+                                        yPerList7.push(dataList.ds0013per);
+                                    }else if(dataList.code == 'DS0015'){
+                                        xList8.push(dataList.ds0015);
+                                        yList8.push(dataList.ds0015cnt);
+                                        yPerList8.push(dataList.ds0015per);
+                                    }else if(dataList.code == 'DS0016'){
+                                        xList9.push(dataList.ds0016);
+                                        yList9.push(dataList.ds0016cnt);
+                                        yPerList9.push(dataList.ds0016per);
+                                    }	
+                                }else if(code == 'RP'){
+                                    if(dataList.code == 'RP0001'){
+                                        xList1.push(dataList.rp0001);
+                                        yList1.push(dataList.rp0001cnt);
+                                        yPerList1.push(dataList.rp0001per);										
+                                    }else if(dataList.code == 'RP0002'){
+                                        xList2.push(dataList.rp0002);
+                                        yList2.push(dataList.rp0002cnt);
+                                        yPerList2.push(dataList.rp0002per);
+                                    }else if(dataList.code == 'RP0003'){
+                                        xList3.push(dataList.rp0003);
+                                        yList3.push(dataList.rp0003cnt);
+                                        yPerList3.push(dataList.rp0003per);
+                                    }else if(dataList.code == 'RP0004'){
+                                        xList4.push(dataList.rp0004);
+                                        yList4.push(dataList.rp0004cnt);
+                                        yPerList4.push(dataList.rp0004per);
+                                    }else if(dataList.code == 'RP0005'){
+                                        xList5.push(dataList.rp0005);
+                                        yList5.push(dataList.rp0005cnt);
+                                        yPerList5.push(dataList.rp0005per);
+                                    }else if(dataList.code == 'RP0007'){
+                                        xList6.push(dataList.rp0007);
+                                        yList6.push(dataList.rp0007cnt);
+                                        yPerList6.push(dataList.rp0007per);
+                                    }else if(dataList.code == 'RP0010'){
+                                        xList7.push(dataList.rp0010);
+                                        yList7.push(dataList.rp0010cnt);
+                                        yPerList7.push(dataList.rp0010per);
+                                    }else if(dataList.code == 'RP0011'){
+                                        xList8.push(dataList.rp0011);
+                                        yList8.push(dataList.rp0011cnt);
+                                        yPerList8.push(dataList.rp0011per);
+                                    }else if(dataList.code == 'RP0013'){
+                                        xList9.push(dataList.rp0013);
+                                        yList9.push(dataList.rp0013cnt);
+                                        yPerList9.push(dataList.rp0013per);
+                                    }else if(dataList.code == 'RP0067'){
+                                        xList10.push(dataList.rp0067);
+                                        yList10.push(dataList.rp0067cnt);
+                                        yPerList10.push(dataList.rp0067per);
+                                    }else if(dataList.code == 'RP0054'){
+                                        xList11.push(dataList.rp0054);
+                                        yList11.push(dataList.rp0054cnt);
+                                        yPerList11.push(dataList.rp0054per);
+                                    }
+                                }else if(code == 'FE'){
+                                    if(dataList.code == 'FE0088'){
+                                        xList1.push(dataList.fe0088);
+                                        yList1.push(dataList.fe0088cnt);
+                                        yPerList1.push(dataList.fe0088per);										
+                                    }else if(dataList.code == 'FE0090'){
+                                        xList2.push(dataList.fe0090);
+                                        yList2.push(dataList.fe0090cnt);
+                                        yPerList2.push(dataList.fe0090per);
+                                    }else if(dataList.code == 'FE0092'){
+                                        xList3.push(dataList.fe0092);
+                                        yList3.push(dataList.fe0092cnt);
+                                        yPerList3.push(dataList.fe0092per);
+                                    }else if(dataList.code == 'FE0094'){
+                                        xList4.push(dataList.fe0094);
+                                        yList4.push(dataList.fe0094cnt);
+                                        yPerList4.push(dataList.fe0094per);
+                                    }else if(dataList.code == 'FE0097'){
+                                        xList5.push(dataList.fe0097);
+                                        yList5.push(dataList.fe0097cnt);
+                                        yPerList5.push(dataList.fe0097per);
+                                    }else if(dataList.code == 'FE0101'){
+                                        xList6.push(dataList.fe0101);
+                                        yList6.push(dataList.fe0101cnt);
+                                        yPerList6.push(dataList.fe0101per);
+                                    }else if(dataList.code == 'FE0103'){
+                                        xList7.push(dataList.fe0103);
+                                        yList7.push(dataList.fe0103cnt);
+                                        yPerList7.push(dataList.fe0103per);
+                                    }
+                                }									
+                            });
+                            
+                            if(chartFlag == false){
+                                barChartDrw1(xAxes1);
+                                barChartDrw2(xAxes2);
+                                barChartDrw3(xAxes3);
+                                barChartDrw4(xAxes4);
+                                barChartDrw5(xAxes5);
+                                barChartDrw6(xAxes6);
+                                barChartDrw7(xAxes7);
+                                barChartDrw8(xAxes8);
+                                barChartDrw9(xAxes9);
+                                barChartDrw10(xAxes10);
+                                barChartDrw11(xAxes11);
+                                /* 
+                                
+                                var x;
+                                var xL;
+                                var y;
+                                var yL;
+                                var per;
+                                var yP;
+                                var html;
+                                var dataVal;
+                                var length;
+                                if(code == 'DI' || 'FE'){
+                                    length = 7;
+                                }else if(code == 'DS'){
+                                    length = 9;
+                                }else if(code == 'RP'){
+                                    length = 11;
+                                }
+                                
+                                for(var i=1; i<=length; i++){
+                                    x = "x"+i;
+                                    xL = "xList"+i;										
+                                    y = "y"+i;
+                                    yL = "yList"+i;
+                                    per = "per"+i;
+                                    yP = "yPerList"+i;
+                                    html = "html"+i;
+                                    dataVal = "dataVal"+i;
+                                    
+                                    x = xList+i.toString().split(",");
+                                    y = yList+i.toString().split(",");
+                                    per = yPerList+i.toString().split(",");
+                                    for(var j=0; j<x.length; j++){
+                                        if(x[j] == null){
+                                            x[j] = "Unknown";
+                                        }
+                                        html += '●' + x[j] + ' : ' + y[j] + '건/' + per[j] +'% |';
+                                        $(".dataVal"+i).text(html);
+                                    }
+                                }
+                                 */
+                                /* var x1 = xList1.toString().split(",");
+                                var y1 = yList1.toString().split(",");
+                                var per1 = yPerList1.toString().split(",");
+                                var html1 = "";
+                                for(var i=0; i<x1.length; i++){
+                                    html1 += '●' + x1[i] + ' : ' + y1[i] + '건/' + per1[i] +'% | ';
+                                    $(".dataVal1").text(html1);
+                                }
+                                var x2 = xList2.toString().split(",");
+                                var y2 = yList2.toString().split(",");
+                                var per2 = yPerList2.toString().split(",");
+                                var html2 = "";
+                                for(var i=0; i<x2.length; i++){
+                                    html2 += '●' + x2[i] + ' : ' + y2[i] + '건/' + per2[i] +'% |';
+                                    $(".dataVal2").text(html2);
+                                }
+                                var x3 = xList3.toString().split(",");
+                                var y3 = yList3.toString().split(",");
+                                var per3 = yPerList3.toString().split(",");
+                                var html3 = "";
+                                for(var i=0; i<x3.length; i++){
+                                    html3 += '●' + x3[i] + ' : ' + y3[i] + '건/' + per3[i] +'% |';
+                                    $(".dataVal3").text(html3);
+                                }
+                                var x4 = xList4.toString().split(",");
+                                var y4 = yList4.toString().split(",");
+                                var per4 = yPerList4.toString().split(",");
+                                var html4 = "";
+                                for(var i=0; i<x4.length; i++){
+                                    html4 += '●' + x4[i] + ' : ' + y4[i] + '건/' + per4[i] +'% |';
+                                    $(".dataVal4").text(html4);
+                                }
+                                var x5 = xList5.toString().split(",");
+                                var y5 = yList5.toString().split(",");
+                                var per5 = yPerList5.toString().split(",");
+                                var html5 = "";
+                                for(var i=0; i<x5.length; i++){
+                                    html5 += '●' + x5[i] + ' : ' + y5[i] + '건/' + per5[i] +'% |';
+                                    $(".dataVal5").text(html5);
+                                }
+                                var x6 = xList6.toString().split(",");
+                                var y6 = yList6.toString().split(",");
+                                var per6 = yPerList6.toString().split(",");
+                                var html6 = "";
+                                for(var i=0; i<x6.length; i++){
+                                    html6 += '●' + x6[i] + ' : ' + y6[i] + '건/' + per6[i] +'% |';
+                                    $(".dataVal6").text(html6);
+                                }
+                                var x7 = xList7.toString().split(",");
+                                var y7 = yList7.toString().split(",");
+                                var per7 = yPerList7.toString().split(",");
+                                var html7 = "";
+                                for(var i=0; i<x7.length; i++){
+                                    html7 += '●' + x7[i] + ' : ' + y7[i] + '건/' + per7[i] +'% |';
+                                    $(".dataVal7").text(html7);
+                                }
+                                if(code == 'DS' || code == 'RP'){		
+                                    var x8 = xList8.toString().split(",");
+                                    var y8 = yList8.toString().split(",");
+                                    var per8 = yPerList8.toString().split(",");
+                                    var html8 = "";
+                                    for(var i=0; i<x8.length; i++){
+                                        html8 += '●' + x8[i] + ' : ' + y8[i] + '건/' + per8[i] +'% |';
+                                        $(".dataVal8").text(html8);
+                                    }
+                                    var x9 = xList9.toString().split(",");
+                                    var y9 = yList9.toString().split(",");
+                                    var per9 = yPerList9.toString().split(",");
+                                    var html9 = "";
+                                    for(var i=0; i<x9.length; i++){
+                                        html9 += '●' + x9[i] + ' : ' + y9[i] + '건/' + per9[i] +'% |';
+                                        $(".dataVal9").text(html9);
+                                    }
+                                }else if(code == 'RP'){
+                                    var x10 = xList10.toString().split(",");
+                                    var y10 = yList10.toString().split(",");
+                                    var per10 = yPerList10.toString().split(",");
+                                    var html10 = "";
+                                    for(var i=0; i<x10.length; i++){
+                                        html10 += '●' + x10[i] + ' : ' + y10[i] + '건/' + per10[i] +'% |';
+                                        $(".dataVal10").text(html10);
+                                    }
+                                    var x11 = xList11.toString().split(",");
+                                    var y11 = yList11.toString().split(",");
+                                    var per11 = yPerList11.toString().split(",");
+                                    var html11 = "";
+                                    for(var i=0; i<x11.length; i++){
+                                        html11 += '●' + x11[i] + ' : ' + y11[i] + '건/' + per11[i] +'% |';
+                                        $(".dataVal11").text(html11);
+                                    }
+                                } */
+                                
+                                chartFlag = true;
+                                xList1 = [];
+                                yList1 = [];
+                                yPerList1 = [];
+                                xList2 = [];
+                                yList2 = [];
+                                yPerList2 = [];
+                                xList3 = [];
+                                yList3 = [];
+                                yPerList3 = [];									
+                                xList4 = [];
+                                yList4 = [];
+                                yPerList = [];									
+                                xList5 = [];
+                                yList5 = [];
+                                yPerList5 = [];									
+                                xList6 = [];
+                                yList6 = [];
+                                yPerList6 = [];									
+                                xList7 = [];
+                                yList7 = [];
+                                yPerList7 = [];									
+                                xList8 = [];
+                                yList8 = [];
+                                yPerList8 = [];								
+                                xList9 = [];
+                                yList9 = [];
+                                yPerList9 = [];
+                                xList10 = [];
+                                yList10 = [];
+                                yPerList10 = [];
+                                xList11 = [];
+                                yList11 = [];
+                                yPerList11 = [];
+                                
+                            }else{
+                                myChart1.destroy();
+                                myChart2.destroy();
+                                myChart3.destroy();
+                                myChart4.destroy();
+                                myChart5.destroy();
+                                myChart6.destroy();
+                                myChart7.destroy();
+                                myChart8.destroy();
+                                myChart9.destroy();
+                                myChart10.destroy();
+                                myChart11.destroy();
+                                barChartDrw1(xAxes1);
+                                barChartDrw2(xAxes2);
+                                barChartDrw3(xAxes3);
+                                barChartDrw4(xAxes4);
+                                barChartDrw5(xAxes5);
+                                barChartDrw6(xAxes6);
+                                barChartDrw7(xAxes7);
+                                barChartDrw8(xAxes8);
+                                barChartDrw9(xAxes9);
+                                barChartDrw10(xAxes10);
+                                barChartDrw11(xAxes11);
+
+                                xList1 = [];
+                                yList1 = [];
+                                yPerList1 = [];
+                                xList2 = [];
+                                yList2 = [];
+                                yPerList2 = [];
+                                xList3 = [];
+                                yList3 = [];
+                                yPerList3 = [];									
+                                xList4 = [];
+                                yList4 = [];
+                                yPerList = [];									
+                                xList5 = [];
+                                yList5 = [];
+                                yPerList5 = [];									
+                                xList6 = [];
+                                yList6 = [];
+                                yPerList6 = [];									
+                                xList7 = [];
+                                yList7 = [];
+                                yPerList7 = [];									
+                                xList8 = [];
+                                yList8 = [];
+                                yPerList8 = [];								
+                                xList9 = [];
+                                yList9 = [];
+                                yPerList9 = [];
+                                xList10 = [];
+                                yList10 = [];
+                                yPerList10 = [];
+                                xList11 = [];
+                                yList11 = [];
+                                yPerList11 = [];
+                                
+                            }
+                            showData();
+                            menuActive();
+                        }, error : function(request, status, error){
+                            alert("code:"+request.status+"\n"+"error:"+error);
+                        }
+                    });
+                }
+            </script>
+            </div>
+    <!-- </div>
+  </div>
+</div> -->
+
+
+
+</section>
+
+</main><!-- End #main -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    </div>
+
+</div>
+
+<!-- ======================
+footer
+======================= -->
+
+<!-- ======================
+END footer
+======================= -->
+
+
+
+</sec:csrfmetatags><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>
