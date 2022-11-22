@@ -466,6 +466,8 @@ width:42px;height:42px;background:#333c4c url("../img/btn_topsearchx2.png") no-r
 .btn_box:hover{border-color:#3b69ed;}
 .btn_box.dtype2{background:#474c6b;border-color:#474c6b;color:#ffffff;}
 .btn_box.dtype2:focus{border-color:#474c6b;box-shadow:0 0 0 0.25rem rgb(71 76 107 / 50%)}
+.btn_box.dtype3{background:#fff;border-color:#dc3545;color:#dc3545;}
+.btn_box.dtype4{background:#fff;border-color:#ffc107;color:#ffc107;}
 .btn_box.medium{padding:10px 20px 11px;font-size:16px;min-width:0;font-weight:400;}
 .btn_box.small{padding:5px 10px 6px;font-size:14px;min-width:0;font-weight:400;}
 .btn_box.has_ico{display:inline-flex;align-items: center;}
@@ -486,7 +488,7 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
 .list_table{width:100%;}
 .list_table thead th{text-align: center;border-bottom:1px solid #000;padding:15px 5px;}
 .list_table thead th:last-of-type{}
-.list_table tbody td{text-align: center;padding:15px 5px 16px;border-bottom:1px solid #d9d9d9;}
+.list_table tbody td{text-align: center;padding:10px 5px;border-bottom:1px solid #d9d9d9;}
 .list_table tbody td .btn_box{white-space: nowrap;}
 .list_table tbody td.nodata_td{padding:200px 20px;}
 .list_table tbody td.nodata_td .nodata_para{margin:0;}
@@ -496,6 +498,11 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
 .list_thtext.btn_sort:hover{color:#2b2b2b;}
 .list_thtext.btn_sort:after{display:block;content:'';width:14px;height:19px;background:url("../img/btn_list_sort.png") no-repeat 0 0/100% auto;position:absolute;top:50%;right:0;transform: translateY(-50%);}
 .list_tdtext{display:inline-block;font-size:16px;line-height:1;color:#4e4e4e;}
+
+.btn_td_wrap{}
+.btn_td_wrap .btn_box{display:block;margin-bottom:2px;}
+.btn_td_wrap .btn_box:last-of-type{margin-bottom:0;}
+
 
 @media (max-width:1280px){
   .sv_copy_group{height:15.625vw;}
@@ -561,8 +568,8 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
 
   .list_table_tb_wrap{overflow-x:auto;}
   .list_table_tb{}
-  .list_table thead th{padding:15px 10px;}
-  .list_table tbody td{padding:15px 10px;}
+  .list_table thead th{padding:10px 10px;}
+  .list_table tbody td{padding:10px 10px;}
   .list_thtext{font-size:14px;white-space: nowrap;}
   .list_tdtext{font-size:14px;white-space: nowrap;}
 }
