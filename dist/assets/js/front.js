@@ -142,3 +142,13 @@ function siblings(t) {
         return e != t;
     });
 }
+
+
+
+function menuRock(item){
+	const itemObj = document.querySelector(item);
+
+	if(itemObj !== undefined){
+		itemObj.classList.add("active");
+	}
+}
