@@ -538,7 +538,7 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
   .sv_copy_group{height:auto;padding:30px 20px;}
   .sv_copy_sub{font-size:14px;}
   .sv_copy_main{font-size:22px;}
-  .sub_content_title{font-size:20px;padding:20px 15px 10px;}
+  .sub_content_title{font-size:20px;padding:20px 15px 20px;}
   .sub_contents_row{padding:0 15px;}
   .subtab_text{font-size:13px;}
   .subtab{padding:10px 5px;}
@@ -551,7 +551,7 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
 
   .respon_form_cols.nbsp{display:none}
 
-  .respon_form_th{flex-basis: 25%;width:25%;}
+  .respon_form_th{flex-basis: 27%;width:27%;}
   .form_thtext{font-size:14px;word-break: break-all;}
   .form-select{font-size:14px;}
   .inline_unit{font-size:14px;top:0}
@@ -570,8 +570,9 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
   .list_table_tb{}
   .list_table thead th{padding:10px 10px;}
   .list_table tbody td{padding:10px 10px;}
-  .list_thtext{font-size:14px;white-space: nowrap;}
+  .list_thtext,
   .list_tdtext{font-size:14px;white-space: nowrap;}
+  .form_guide_text{font-size:12px;}
 }
 @media (min-width:1921px){
   .sub_visual_row{background-size:cover;}
