@@ -93,14 +93,39 @@
 			</div>
 			<div class="sub_contents_row">
 				<h2 class="sub_content_title">사용자 통계</h2>
-				<div class="sub_content_zone">
-					내용이 들어갑니다.
+				<div class="sub_content_zone type2">
+					<p class="sub_form_top_copy">CSV 파일 등록</p>
+					<div class="sub_form_cont_group">
+						<div class="form_upload_wrap">
+							<div class="upload_current_text">첨부된 파일이 없습니다.</div>
+							<div class="upload_btn_cols">
+								<button type="button" class="btn btn_box medium has_ico dtype2" name="btn_upload">
+									<span class="ico ico_upload"></span>
+									<span class="btn_box_text">파일 업로드</span>
+								</button>
+								<input type="file" class="hidden_file">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 		<!-- // contents -->
 		<script>
 			menuRock("#gnb_04"); // 메뉴락
+
+			// file
+			$(function() {
+				$("[name='btn_upload']").on("click", function() {
+					$(this).next(".hidden_file").trigger("click");
+				});
+				$(".hidden_file").on("change", function() {
+					var fileValue = $(this).val().split("\\");
+					var fileName = fileValue[fileValue.length - 1];
+					console.log($(this).parents(".form_upload_wrap"));
+					$(this).parents(".form_upload_wrap").find(".upload_current_text").text(fileName);
+				});
+			});
 		</script>
 
 		<!-- footer -->
