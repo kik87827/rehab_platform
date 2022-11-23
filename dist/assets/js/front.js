@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
   commonInit();
   commonEvent();
 });
+$(function(){
+  dimLayerControl();
+});
 window.addEventListener("load", function() {});
 
 function commonInit() {
@@ -49,35 +52,46 @@ function commonEvent() {
 
   function mobileMenuEvent(){
     // if(window.innerWidth > 1023){return;}
-    btn_mobile_menu_call.addEventListener("click",(e)=>{
-      e.preventDefault();
-      header_gnb_row.classList.toggle("active");
-      searchClose();
-    });
-    header_gnb_row.addEventListener("click",(e)=>{
-      e.preventDefault();
-      if(e.target.closest(".header_pix") !== null){return;}
-      header_gnb_row.classList.remove("active");
-    });
-    btn_gnb_close.addEventListener("click",(e)=>{
-      e.preventDefault();
-
-      header_gnb_row.classList.remove("active");
-    });
-    btn_mobile_search_call.addEventListener("click",(e)=>{
-      e.preventDefault();
-      let thisEventObj = e.currentTarget;
-      thisEventObj.classList.toggle("close");
-      header_search_zone.classList.toggle("active");
-      if(header_gnb_row !== null){
+    if(btn_mobile_menu_call !== null){
+      btn_mobile_menu_call.addEventListener("click",(e)=>{
+        e.preventDefault();
+        header_gnb_row.classList.toggle("active");
+        searchClose();
+      });
+    }
+    if(header_gnb_row !== null){
+      header_gnb_row.addEventListener("click",(e)=>{
+        e.preventDefault();
+        if(e.target.closest(".header_pix") !== null){return;}
         header_gnb_row.classList.remove("active");
-      }
-    });
-    header_search_zone.addEventListener("click",(e)=>{
-      e.preventDefault();
-      if(e.target.closest(".header_search_wrap") !== null){return;}
-      searchClose();
-    });
+      });
+    }
+    if(btn_gnb_close !== null){
+      btn_gnb_close.addEventListener("click",(e)=>{
+        e.preventDefault();
+
+        header_gnb_row.classList.remove("active");
+      });
+    }
+    if(btn_mobile_search_call !== null){
+    
+      btn_mobile_search_call.addEventListener("click",(e)=>{
+        e.preventDefault();
+        let thisEventObj = e.currentTarget;
+        thisEventObj.classList.toggle("close");
+        header_search_zone.classList.toggle("active");
+        if(header_gnb_row !== null){
+          header_gnb_row.classList.remove("active");
+        }
+      });
+    }
+    if(header_search_zone !== null){
+      header_search_zone.addEventListener("click",(e)=>{
+        e.preventDefault();
+        if(e.target.closest(".header_search_wrap") !== null){return;}
+        searchClose();
+      });
+    }
   }
   function mobileResize(){
       if(window.innerWidth > 1023){
@@ -151,4 +165,150 @@ function menuRock(item){
 	if(itemObj !== undefined){
 		itemObj.classList.add("active");
 	}
+}
+
+
+
+
+ 
+/* layer popup event */
+function dimLayerControl(){
+	var touchIs = "ontouchstart" in window,
+		$modal = $(".dimlayer_z");
+	if($modal.length===0){return;}
+	
+	var readywidth = $(window).width();
+	
+	var objThis = this;
+	$modal.on("click",".btn_layerclose,.closetrigger,.fullpop_dim",function(e){
+		var $this = $(this),
+			$t_p = $this.parents(".dimlayer_z");
+		e.preventDefault();
+		objThis.dimLayerHide({ 
+			target : $t_p,
+			closeCallback : function(){
+				
+			}
+		});
+	});
+};
+/* layer popup show */
+function dimLayerShow(option){
+	var $callbtn = null,
+		touchIs = "ontouchstart" in window,
+		$modal = null,
+		$target = null,
+		transis = "TransitionEvent" in window,
+		$t_box = null,
+		$t_td = null,
+		$page_wrap = null,
+		$fullpop_item = null,
+		$fullpop_titlow = null,
+		$fullpop_contlow = null,
+		$page_wrap = null,
+		$t_tpt = 0,
+		$t_tpb = 0,
+		$res_value = 0;
+	
+	$(function(){
+		$modal = $(".dimlayer_z");
+		
+		$target = $(option.target);
+		$page_wrap = $(".page_wrap");
+		
+		
+		if($modal.length===0){return;}
+		$modal.removeClass("active");
+		$target.addClass("active");
+		setTimeout(function(){
+			$target.addClass("motion");
+		},30);
+
+		
+		$page_wrap.css({"z-index":0});
+		$page_wrap.append($target);
+		heightcheck();
+
+		
+		if ($target.hasClass("fulltype")) {
+			$fullpop_titlow = $target.find(".fullpop_titlow");
+			$fullpop_contlow = $target.find(".fullpop_contlow");
+			$fullpop_item = $target.find(".fullpop_item");
+		}
+
+		if("openCallback" in option){
+			option.openCallback();
+		}
+		function fullContHeight(){
+			if ($target.hasClass("fulltype")) {
+				$fullpop_titlow = $target.find(".fullpop_titlow");
+				$fullpop_contlow = $target.find(".fullpop_contlow");
+				$fullpop_item = $target.find(".fullpop_item");
+				if ($fullpop_titlow.length) {
+					$fullpop_contlow.css({height : ""});
+					if ($(window).width() > 1023) {
+						$res_value = 60;
+					} else {
+						$res_value = 40;
+					}
+					$fullpop_contlow.css({
+						height: $fullpop_item.outerHeight() - $fullpop_titlow.outerHeight() - $res_value
+					});
+				}
+			}
+		}
+		function heightcheck(){
+			if(touchIs){
+				$("body").data("data-scr",$(window).scrollTop()).css({"margin-top":-$(window).scrollTop()}).append($target);
+				$("html").addClass("touchDis");
+			}
+		}
+		// var $windowWid = 0;
+		// $(window).on("resize", function () {
+		// 	if ($windowWid == $(window).width() && touchIs) {
+		// 		return;
+		// 	}
+		// 	$windowWid = $(window).width();
+		// });
+	});
+};
+/* layer popup hide */
+function dimLayerHide(option){
+	var $callbtn = null,
+		touchIs = "ontouchstart" in window,
+		$modal = null,
+		$target = null,
+		transis = "TransitionEvent" in window,
+		$t_box = null,
+		$t_box_duration = 0;
+		
+	$(function(){
+		$modal = $(".dimlayer_z");
+		
+		$target = $(option.target);
+		$t_box = $target.find(".layer_box");
+		$t_td = $target.find(".dimlayer_td");
+		$t_tpt = parseInt($t_td.css("padding-top"));
+		$t_tpb = parseInt($t_td.css("padding-bottom"));
+		
+		if($modal.length===0){return;}
+		$target.removeClass("motion");
+		setTimeout(function(){
+			$target.removeClass("active");
+			$(".page_wrap").css({"z-index":""});
+			$("html,body").removeClass("touchDis touchDis2");
+			scrollEnd();
+			if("closeCallback" in option){
+				option.closeCallback();
+			}
+		},530);
+		
+		
+		function scrollEnd(){
+			if(touchIs){
+				$("body").css({"margin-top":0});
+				window.scrollTo(0,Number($("body").data("data-scr")));
+			}
+		}
+	});
 }

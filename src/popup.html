@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/head.html')
+<body class="body">
+	<div class="page_wrap">
+		<button type="button" class="btn_guide" id="btn_callLayer">레이어 호출</button>
+		<script>
+			$(function(){
+				$("#btn_callLayer").on("click",function(){
+					dimLayerShow({
+						target: "#popup_templete"
+					});
+				});
+				dimLayerShow({
+					target: "#popup_templete"
+				});
+			});
+		</script>
+		<!-- 레이어팝업 -->
+		<div class="dimlayer_z fulltype" id="popup_templete">
+			<div class="fullpop_dim"></div>
+			<div class="fullpop_item">
+				<div class="fullpop_titlow">
+					<h4 class="fullpop_title">타이틀</h4>
+				</div>
+				<div class="fullpop_contlow">
+					<div class="fullpop_contlow_in">
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.
+					</div>
+				</div>
+				<button type="button" class="btn_layerclose"></button>
+			</div>
+		</div>
+		<!-- // 레이어팝업 -->
+	</div>
+</body>
+</html>
