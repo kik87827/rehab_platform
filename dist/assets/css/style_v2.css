@@ -174,7 +174,8 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .dimlayer_z img{max-width:100%;}
 .hdtext{display:inline-block;width:0;height:0;overflow:hidden;line-height:0;color:transparent;position:absolute;top:0;left:-99999px;}
 body{background:#fff;}
-
+:root{scroll-behavior: auto !important;}
+html{scroll-behavior: auto !important;}
 
 /* layout */
 .header_wrap{}
@@ -720,6 +721,7 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
   .data_result_wrap{margin-top:40px;}
 
   .list_table_tb_wrap{overflow-x:auto;}
+  .list_table_tb_wrap::-webkit-scrollbar {width: 0;display:none;}
   .list_table_tb{}
   .list_table thead th{padding:13px 10px;}
   .list_table tbody td{padding:10px 10px;}
@@ -747,6 +749,9 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
 
   .sub_form_top_copy{font-size:14px;margin-bottom:10px;}
   .upload_current_text{font-size:14px;}
+
+  .list_thtext.btn_sort{padding:0 12px;}
+  .list_thtext.btn_sort:after{width:10px;height:15px;}
 }
 @media (min-width:1921px){
   .sub_visual_row{background-size:cover;}
