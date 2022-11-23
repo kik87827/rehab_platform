@@ -145,14 +145,33 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .page_wrap input[type="text"]::-moz-placeholder { color:#999; }
 .page_wrap input[type="text"]:placeholder-shown { color:#999; }
 
-h1,
- h2,
-h3,
-h4,
-h5,
-h6,button,a,p,span{font-family: 'Noto Sans KR';}
+
+
+.page_wrap h1,
+ .page_wrap h2,
+.page_wrap h3,
+.page_wrap h4,
+.page_wrap h5,
+.page_wrap h6,
+.page_wrap button,
+.page_wrap a,
+.page_wrap p,
+.page_wrap span{font-family: 'Noto Sans KR';}
+
+
+.dimlayer_z h1,
+.dimlayer_z h2,
+.dimlayer_z h3,
+.dimlayer_z h4,
+.dimlayer_z h5,
+.dimlayer_z h6,
+.dimlayer_z button,
+.dimlayer_z a,
+.dimlayer_z p,
+.dimlayer_z span{font-family: 'Noto Sans KR';}
 
 .page_wrap img{max-width:100%;}
+.dimlayer_z img{max-width:100%;}
 .hdtext{display:inline-block;width:0;height:0;overflow:hidden;line-height:0;color:transparent;position:absolute;top:0;left:-99999px;}
 body{background:#fff;}
 
@@ -526,6 +545,7 @@ width:42px;height:42px;background:#333c4c url("../img/btn_topsearchx2.png") no-r
 .form_guide_text{font-size:14px;color:#4e4e4e;line-height:1;}
 .import_mark{display:inline-block;width:6px;height:6px;background:#3b69ed;border-radius:100%;flex:0 0 6px;}
 .respon_form_tb{border-top:1px solid #000000;}
+.respon_form_tb.type2 .respon_form_th{flex-basis: 15%;}
 .respon_form_tr{display:flex;border-bottom:1px solid #d9d9d9;}
 .respon_form_cols{flex:1;display:flex;}
 .respon_form_th,
@@ -588,6 +608,24 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
 
 .list_table_tb_wrap.type2 .list_table tbody td{padding:16px 5px 17px;}
 
+.chkrd_flist_w{}
+.chkrd_flist_w .chkrd_flist{list-style:none;margin:0;padding:0;}
+.chkrd_flist{display:flex;flex-wrap:wrap;position:relative;top:-5px;min-height:38px;align-items: center;margin:0;}
+.chkrd_flist > li{margin:10px 38px 0 0;}
+.chkrd_flist > li:last-of-type{}
+.chkrd_flist .chkrd_item{}
+
+.chkrd_item{display:flex;line-height:0;font-size:0;}
+.chkrd{cursor:pointer;-webkit-appearance: none; appearance: none; -moz-appearance: none; -ms-appearance:none;vertical-align:middle;background:url("../img/ico_circhk.png") no-repeat 0 0/100% auto;width:21px;height:21px;border-radius:100%;border:1px solid #a6a6a6;flex:0 0 21px;}
+.chkrd_label{cursor:pointer;font-size:16px;padding-top:1px;color:#444444;display:inline-block;line-height:1;margin-left:8px;vertical-align:middle;}
+.chkrd_label:before{}
+.chkrd:checked{background-position:0 -19px;border-color:#3b69ed;background-color:#3b69ed;}
+.chkrd:checked + .chkrd_label{}
+.chkrd:checked + .chkrd_label:before{}
+
+.chkrd_item.ctype2 .chkrd_label{color:#fff;}
+
+
 
 @media (max-width:1280px){
   .sv_copy_group{height:15.625vw;}
@@ -611,7 +649,7 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
   .list_table tbody td.nodata_td{padding:100px 20px;}
   .list_thtext{font-size:15px;}
   .list_tdtext{font-size:15px;}
-
+  .chkrd_label{font-size:15px;}
     
   .data_tab{font-size:15px;}
 
@@ -640,14 +678,16 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
 
   .respon_form_cols.nbsp{display:none}
 
-  .respon_form_th{flex-basis: 27%;width:27%;}
+  .respon_form_th{flex-basis: 27% !important;width:27% !important;}
+
   .form_thtext{font-size:14px;word-break: break-all;}
   .form-select{font-size:14px;}
   .inline_unit{font-size:14px;top:0}
   .respon_form_th,
   .respon_form_td{padding:10px;}
 
-  .btn_sortsubmit_group{margin:30px -2.5px 0;}
+  .btn_sortsubmit_group{margin:30px 30px 0;}
+  .btn_sortsubmit_group.has_one .btn_box{flex:0 0 60%;width:60%;}
   .btn_box{min-width:0;flex:1;margin:0 2.5px;padding:12px;font-size:16px;}
   .btn_box.medium{font-size:14px;}
   .form_guide{font-size:14px;}
@@ -669,6 +709,7 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
   .data_tab_list > li{flex:0 0 50%;width:50%;margin:0 0 7px 0;}
   .data_tab{font-size:14px;padding:8px 15px;}
   .data_tab.active:after{width:10px;height:6px;background-size:100% auto;bottom:-6px;}
+  .chkrd_label{font-size:14px;padding-top:1px;}
 }
 @media (min-width:1921px){
   .sub_visual_row{background-size:cover;}
