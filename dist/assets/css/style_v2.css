@@ -625,6 +625,10 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
 
 .chkrd_item.ctype2 .chkrd_label{color:#fff;}
 
+.chart_box_item_group{display:flex;flex-wrap:wrap;margin:-10px;padding-top:65px;}
+.chart_box_item{flex:0 0 50%;padding:10px 10px;}
+.chart_box{border-radius:10px;border:1px solid #d6d6d6;padding:35px;}
+.sample_chart_img{width:100%;}
 
 
 @media (max-width:1280px){
@@ -653,6 +657,10 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
     
   .data_tab{font-size:15px;}
 
+  
+  .chart_box_item_group{padding-top:45px;}
+  .chart_box_item{}
+  .chart_box{padding:25px;}
 }
 
 @media (max-width:1023px){
@@ -710,6 +718,11 @@ input.form_number{border:1px solid #ced4da;height:38px;border-radius:4px;line-he
   .data_tab{font-size:14px;padding:8px 15px;}
   .data_tab.active:after{width:10px;height:6px;background-size:100% auto;bottom:-6px;}
   .chkrd_label{font-size:14px;padding-top:1px;}
+
+  
+  
+  .chart_box_item{flex:0 0 100%;}
+  .chart_box{padding:15px;}
 }
 @media (min-width:1921px){
   .sub_visual_row{background-size:cover;}
