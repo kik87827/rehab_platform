@@ -38,6 +38,7 @@ function commonEvent() {
   const header_gnb_row = document.querySelector(".header_gnb_row");
   const header_search_zone = document.querySelector(".header_search_zone");
   const btn_gnb_close = document.querySelector(".btn_gnb_close");
+  const btn_gotop = document.querySelector(".btn_gotop");
 
   function resizeCommon(){
     let windowWidth = 0;
@@ -48,6 +49,17 @@ function commonEvent() {
       mobileResize();
       windowWidth = window.innerWidth;
     });
+  }
+
+  function eventFunc(){
+    if(btn_gotop !== null){
+      btn_gotop.addEventListener("click",(e)=>{
+        e.preventDefault();
+        setTimeout(()=>{
+          window.scrollTo(0,0);
+        },30);
+      });
+    }
   }
 
   function mobileMenuEvent(){
@@ -111,6 +123,7 @@ function commonEvent() {
 
   resizeCommon();
   mobileMenuEvent();
+  eventFunc();
 }
 
 
